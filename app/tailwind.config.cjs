@@ -4,6 +4,10 @@ const theme = require('tailwindcss/defaultTheme');
 
 module.exports = {
   content: ['./index.html', './src/**/*.{ts,tsx}'],
+  daisyui: {
+    darkTheme: 'coffee',
+    themes: ['garden', 'coffee'],
+  },
   plugins: [
     require('@tailwindcss/typography'),
     require('@tailwindcss/forms'),

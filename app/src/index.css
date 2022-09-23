@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  @apply bg-base-300 text-neutral-content antialiased;
+  @apply bg-base-100 antialiased;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

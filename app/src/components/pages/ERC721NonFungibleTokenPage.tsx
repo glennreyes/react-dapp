@@ -1,8 +1,16 @@
+import { useTitle } from 'react-use';
+
+import { PageNavigation } from '../page-navigation/PageNavigation';
+import { PageNavigationLink } from '../page-navigation/PageNavigationLink';
+import { Subheading } from '../ui/SubHeading';
+
 export function ERC721NonFungibleTokenPage() {
+  useTitle('ERC-721 NFT | React Dapp');
+
   return (
     <>
-      <h4 className="text-primary">Exercise 5</h4>
-      <h1>Your first NFT</h1>
+      <Subheading>Exercise 5</Subheading>
+      <h1>Create an NFT</h1>
       {/* TODO: Add instructions */}
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
@@ -10,6 +18,11 @@ export function ERC721NonFungibleTokenPage() {
         Amet maxime aperiam doloremque dignissimos consequatur corrupti
         praesentium aspernatur placeat esse laboriosam.
       </p>
+      <PageNavigation>
+        <PageNavigationLink direction="back" to="/erc-20-token">
+          Exercise 4 — Create an ERC-20 Token
+        </PageNavigationLink>
+      </PageNavigation>
     </>
   );
 }

@@ -8,12 +8,12 @@ interface NavbarProps extends ComponentProps<'nav'> {
 }
 
 export function Navbar({ children, className, title, ...props }: NavbarProps) {
-  const classes = classNames('navbar bg-base-100', className);
+  const classes = classNames('navbar bg-base-200', className);
 
   return (
     <nav className={classes} {...props}>
       <div className="flex-1">
-        <Link className="btn btn-ghost text-xl normal-case" to="/">
+        <Link className="btn btn-ghost text-lg normal-case" to="/">
           {title}
         </Link>
       </div>

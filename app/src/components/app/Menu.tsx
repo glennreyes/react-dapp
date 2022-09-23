@@ -9,23 +9,25 @@ export function Menu() {
         <DrawerMenuLink to="/">Home</DrawerMenuLink>
       </DrawerMenuItem>
       <DrawerMenuItem>
-        <DrawerMenuLink to="/connect-wallet">1 — Connect Wallet</DrawerMenuLink>
+        <DrawerMenuLink to="/connect-wallet">
+          1️⃣ — Connect Wallet
+        </DrawerMenuLink>
       </DrawerMenuItem>
       <DrawerMenuItem>
-        <DrawerMenuLink to="/greeter">2 — Greeter</DrawerMenuLink>
+        <DrawerMenuLink to="/greeter">2️⃣ — Greeter</DrawerMenuLink>
       </DrawerMenuItem>
       <DrawerMenuItem>
         <DrawerMenuLink to="/ether-wallet">
-          3 — Deposit & Withdraw Ether
+          3️⃣ — Deposit & Withdraw Ether
         </DrawerMenuLink>
       </DrawerMenuItem>
       <DrawerMenuItem>
         <DrawerMenuLink to="/erc-20-token">
-          4 — Create an ERC-20 Token
+          4️⃣ — Create an ERC-20 Token
         </DrawerMenuLink>
       </DrawerMenuItem>
       <DrawerMenuItem>
-        <DrawerMenuLink to="/erc-721-nft">5 — Create an NFT</DrawerMenuLink>
+        <DrawerMenuLink to="/erc-721-nft">5️⃣ — Create an NFT</DrawerMenuLink>
       </DrawerMenuItem>
     </DrawerMenu>
   );

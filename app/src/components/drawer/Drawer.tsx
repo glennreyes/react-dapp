@@ -39,7 +39,7 @@ export function Drawer({
           type="checkbox"
           className="drawer-toggle"
         />
-        <div className="drawer-content">{children}</div>
+        <div className="drawer-content flex flex-col">{children}</div>
         <div className="drawer-side">
           <button className="drawer-overlay" onClick={close} />
           {menu}

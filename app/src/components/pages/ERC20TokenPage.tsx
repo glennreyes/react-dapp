@@ -1,8 +1,16 @@
+import { useTitle } from 'react-use';
+
+import { PageNavigation } from '../page-navigation/PageNavigation';
+import { PageNavigationLink } from '../page-navigation/PageNavigationLink';
+import { Subheading } from '../ui/SubHeading';
+
 export function ERC20TokenPage() {
+  useTitle('ERC-20 Token | React Dapp');
+
   return (
     <>
-      <h4 className="text-primary">Exercise 4</h4>
-      <h1>Your first ERC-20 token</h1>
+      <Subheading>Exercise 4</Subheading>
+      <h1>Create an ERC-20 Token</h1>
       {/* TODO: Add instructions */}
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
@@ -10,6 +18,14 @@ export function ERC20TokenPage() {
         Amet maxime aperiam doloremque dignissimos consequatur corrupti
         praesentium aspernatur placeat esse laboriosam.
       </p>
+      <PageNavigation>
+        <PageNavigationLink direction="back" to="/ether-wallet">
+          Exercise 3 — Deposit and Withdraw Ether
+        </PageNavigationLink>
+        <PageNavigationLink to="/erc-721-nft">
+          Exercise 5 — Create an NFT
+        </PageNavigationLink>
+      </PageNavigation>
     </>
   );
 }

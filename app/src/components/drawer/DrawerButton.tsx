@@ -19,7 +19,7 @@ export function DrawerButton({
 
   return (
     <Button className={classes} onClick={open} {...props}>
-      <Icon icon={ListBulletIcon} className="text-primary-content" />
+      <Icon icon={ListBulletIcon} className="text-base-content" />
       <ScreenReader>{children}</ScreenReader>
     </Button>
   );

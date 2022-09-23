@@ -1,10 +1,16 @@
+import { useTitle } from 'react-use';
+
+import { PageNavigation } from '../page-navigation/PageNavigation';
+import { PageNavigationLink } from '../page-navigation/PageNavigationLink';
+import { Subheading } from '../ui/SubHeading';
+
 export function EtherWalletPage() {
+  useTitle('Ether Wallet | React Dapp');
+
   return (
     <>
-      <h4 className="text-primary">Exercise 3</h4>
-      <h1>
-        Deposit and withdraw ether with <code>EtherWallet.sol</code>
-      </h1>
+      <Subheading>Exercise 3</Subheading>
+      <h1>Deposit and Withdraw Ether</h1>
       {/* TODO: Add instructions */}
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
@@ -12,6 +18,14 @@ export function EtherWalletPage() {
         Amet maxime aperiam doloremque dignissimos consequatur corrupti
         praesentium aspernatur placeat esse laboriosam.
       </p>
+      <PageNavigation>
+        <PageNavigationLink direction="back" to="/greeter">
+          Exercise 2 — Deposit and Withdraw Ether
+        </PageNavigationLink>
+        <PageNavigationLink to="/erc-20-token">
+          Exercise 4 — Create an ERC-20 token
+        </PageNavigationLink>
+      </PageNavigation>
     </>
   );
 }
