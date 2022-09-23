@@ -3,9 +3,13 @@
 @tailwind utilities;
 
 :root {
-  @apply antialiased;
+  @apply bg-base-300 text-neutral-content antialiased;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+#root {
+  @apply min-h-screen min-w-[320px];
 }

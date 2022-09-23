@@ -1,0 +1,23 @@
+import type { ComponentProps } from 'react';
+import { Link } from 'react-router-dom';
+
+import { classNames } from '../../utils';
+
+interface NavbarProps extends ComponentProps<'nav'> {
+  title: string;
+}
+
+export function Navbar({ children, className, title, ...props }: NavbarProps) {
+  const classes = classNames('navbar bg-base-100', className);
+
+  return (
+    <nav className={classes} {...props}>
+      <div className="flex-1">
+        <Link className="btn btn-ghost text-xl normal-case" to="/">
+          {title}
+        </Link>
+      </div>
+      <div className="flex flex-none items-center space-x-2">{children}</div>
+    </nav>
+  );
+}

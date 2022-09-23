@@ -4,7 +4,13 @@ const theme = require('tailwindcss/defaultTheme');
 
 module.exports = {
   content: ['./index.html', './src/**/*.{ts,tsx}'],
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/line-clamp'),
+    require('@tailwindcss/aspect-ratio'),
+    require('daisyui'),
+  ],
   theme: {
     extend: {
       fontFamily: {
