@@ -1,6 +1,6 @@
-import { classNames } from '../../../utils';
-import type { ButtonProps } from '../../ui/Button';
-import { Button } from '../../ui/Button';
+import type { ButtonProps } from '../../components/ui/Button';
+import { Button } from '../../components/ui/Button';
+import { classNames } from '../../utils';
 
 type ConnectWalletButtonProps = ButtonProps;
 

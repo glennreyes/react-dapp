@@ -1,9 +1,9 @@
 import { Outlet } from 'react-router-dom';
 
+import { ConnectWalletButton } from '../../exercises/1-connect-wallet/ConnectWalletButton';
 import { Drawer } from '../drawer/Drawer';
 import { DrawerButton } from '../drawer/DrawerButton';
 import { DrawerMenu } from '../drawer/DrawerMenu';
-import { ConnectWalletButton } from '../exercises/1-connect-wallet/ConnectWalletButton';
 import { Article } from './Article';
 import { Container } from './Container';
 import { Main } from './Main';

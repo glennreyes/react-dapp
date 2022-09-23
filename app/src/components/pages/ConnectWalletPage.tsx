@@ -1,4 +1,4 @@
-import { ConnectWalletButton } from '../exercises/1-connect-wallet/ConnectWalletButton';
+import { ConnectWalletButton } from '../../exercises/1-connect-wallet/ConnectWalletButton';
 
 export function ConnectWalletPage() {
   return (
