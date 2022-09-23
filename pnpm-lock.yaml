@@ -8,12 +8,14 @@ importers:
       eslint-config-banana: ^1.0.0
       prettier: ^2.7.1
       prettier-plugin-solidity: 1.0.0-beta.24
+      prettier-plugin-tailwindcss: ^0.1.13
       turbo: ^1.5.2
     devDependencies:
       eslint: 8.23.1
       eslint-config-banana: 1.0.0_4zbvgrzaoioiwyrswprkhem4hq
       prettier: 2.7.1
       prettier-plugin-solidity: 1.0.0-beta.24_prettier@2.7.1
+      prettier-plugin-tailwindcss: 0.1.13_prettier@2.7.1
       turbo: 1.5.2
 
   app:
@@ -5775,6 +5777,15 @@ packages:
       semver: 7.3.7
       solidity-comments-extractor: 0.0.7
       string-width: 4.2.3
+    dev: true
+
+  /prettier-plugin-tailwindcss/0.1.13_prettier@2.7.1:
+    resolution: {integrity: sha512-/EKQURUrxLu66CMUg4+1LwGdxnz8of7IDvrSLqEtDqhLH61SAlNNUSr90UTvZaemujgl3OH/VHg+fyGltrNixw==}
+    engines: {node: '>=12.17.0'}
+    peerDependencies:
+      prettier: '>=2.2.0'
+    dependencies:
+      prettier: 2.7.1
     dev: true
 
   /prettier/2.7.1:
