@@ -43,14 +43,20 @@ importers:
 
   protocol:
     specifiers:
+      '@ethersproject/abi': ^5.7.0
+      '@ethersproject/providers': ^5.7.1
       '@nomicfoundation/hardhat-toolbox': ^2.0.0
       eslint: ^8.23.1
       eslint-config-banana: ^1.0.0
+      ethers: ^5.7.1
       hardhat: ^2.11.2
     devDependencies:
+      '@ethersproject/abi': 5.7.0
+      '@ethersproject/providers': 5.7.1
       '@nomicfoundation/hardhat-toolbox': 2.0.0_arz2pjsexbnfbviumqvlu5osza
       eslint: 8.23.1
       eslint-config-banana: 1.0.0_4zbvgrzaoioiwyrswprkhem4hq
+      ethers: 5.7.1
       hardhat: 2.11.2_qv3zdqwr5cvvfboiktsp7a3dfa
 
 packages:
