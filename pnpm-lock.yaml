@@ -7,11 +7,13 @@ importers:
       eslint: ^8.23.1
       eslint-config-banana: ^1.0.0
       prettier: ^2.7.1
+      prettier-plugin-solidity: 1.0.0-beta.24
       turbo: ^1.5.2
     devDependencies:
       eslint: 8.23.1
       eslint-config-banana: 1.0.0_4zbvgrzaoioiwyrswprkhem4hq
       prettier: 2.7.1
+      prettier-plugin-solidity: 1.0.0-beta.24_prettier@2.7.1
       turbo: 1.5.2
 
   app:
@@ -5852,6 +5854,21 @@ packages:
       fast-diff: 1.2.0
     dev: true
 
+  /prettier-plugin-solidity/1.0.0-beta.24_prettier@2.7.1:
+    resolution: {integrity: sha512-6JlV5BBTWzmDSq4kZ9PTXc3eLOX7DF5HpbqmmaF+kloyUwOZbJ12hIYsUaZh2fVgZdV2t0vWcvY6qhILhlzgqg==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      prettier: ^2.3.0
+    dependencies:
+      '@solidity-parser/parser': 0.14.3
+      emoji-regex: 10.1.0
+      escape-string-regexp: 4.0.0
+      prettier: 2.7.1
+      semver: 7.3.7
+      solidity-comments-extractor: 0.0.7
+      string-width: 4.2.3
+    dev: true
+
   /prettier/2.7.1:
     resolution: {integrity: sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==}
     engines: {node: '>=10.13.0'}
@@ -6414,6 +6431,10 @@ packages:
       tmp: 0.0.33
     transitivePeerDependencies:
       - debug
+    dev: true
+
+  /solidity-comments-extractor/0.0.7:
+    resolution: {integrity: sha512-wciNMLg/Irp8OKGrh3S2tfvZiZ0NEyILfcRCXCD4mp7SgK/i9gzLfhY2hY7VMCQJ3kH9UB9BzNdibIVMchzyYw==}
     dev: true
 
   /solidity-coverage/0.8.2_hardhat@2.11.2:

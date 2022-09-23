@@ -9,20 +9,31 @@
     "compile": "turbo run compile",
     "deploy": "turbo run deploy",
     "dev": "turbo run dev",
-    "format": "pnpm prettier && turbo run format",
+    "format": "pnpm prettier --write && turbo run format",
     "node": "turbo run node",
     "preview": "turbo run preview",
-    "prettier": "prettier --cache --list-different **/*.{json,ts,tsx,yaml}",
-    "lint": "turbo run lint",
+    "prettier": "prettier --cache --list-different **/*.{json,sol,ts,tsx,yaml}",
+    "lint": "pnpm prettier && turbo run lint",
     "typecheck": "turbo run typecheck"
   },
   "devDependencies": {
     "eslint": "^8.23.1",
     "eslint-config-banana": "^1.0.0",
     "prettier": "^2.7.1",
+    "prettier-plugin-solidity": "1.0.0-beta.24",
     "turbo": "^1.5.2"
   },
   "prettier": {
+    "overrides": [
+      {
+        "files": "*.sol",
+        "options": {
+          "tabWidth": 4,
+          "singleQuote": false,
+          "bracketSpacing": false
+        }
+      }
+    ],
     "singleQuote": true,
     "trailingComma": "all"
   }

@@ -13,7 +13,9 @@ async function main() {
   await lock.deployed();
 
   console.log(
-    `Lock with 1 ETH and unlock timestamp ${unlockTime} deployed to ${lock.address}`,
+    `Lock with 1 ETH and unlock timestamp ${unlockTime} deployed to ${
+      (lock as any).address
+    }`,
   );
 }
 
