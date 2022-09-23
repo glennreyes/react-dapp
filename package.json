@@ -24,15 +24,8 @@
     "turbo": "^1.5.2"
   },
   "prettier": {
-    "overrides": [
-      {
-        "files": "*.sol",
-        "options": {
-          "tabWidth": 4,
-          "singleQuote": false,
-          "bracketSpacing": false
-        }
-      }
+    "plugins": [
+      "prettier-plugin-solidity"
     ],
     "singleQuote": true,
     "trailingComma": "all"
