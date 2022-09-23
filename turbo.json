@@ -8,6 +8,13 @@
       "outputs": [],
       "outputMode": "new-only"
     },
+    "compile": {
+      "outputs": [],
+      "outputMode": "new-only"
+    },
+    "deploy": {
+      "cache": false
+    },
     "format": {
       "outputs": [],
       "outputMode": "new-only"
@@ -15,6 +22,9 @@
     "lint": {
       "outputs": [],
       "outputMode": "new-only"
+    },
+    "node": {
+      "cache": false
     }
   }
 }

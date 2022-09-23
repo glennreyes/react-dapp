@@ -1,0 +1,17 @@
+{
+  "name": "@react-dapp/protocol",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "compile": "hardhat compile",
+    "deploy": "hardhat run --network localhost scripts/deploy.ts",
+    "node": "hardhat node",
+    "format": "pnpm lint --fix",
+    "lint": "eslint .",
+    "typecheck": "tsc"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^2.0.0",
+    "hardhat": "^2.11.2"
+  }
+}
