@@ -1,10 +1,10 @@
-import { ConnectWalletButton } from '../../exercises/1-connect-wallet/ConnectWalletButton';
-
-export function ConnectWalletPage() {
+export function GreeterPage() {
   return (
     <>
-      <h4 className="text-primary">Exercise 1</h4>
-      <h1>Connect Wallet</h1>
+      <h4 className="text-primary">Exercise 2</h4>
+      <h1>
+        Interact with <code>Greeter.sol</code> contract
+      </h1>
       {/* TODO: Add instructions */}
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
@@ -12,7 +12,6 @@ export function ConnectWalletPage() {
         Amet maxime aperiam doloremque dignissimos consequatur corrupti
         praesentium aspernatur placeat esse laboriosam.
       </p>
-      <ConnectWalletButton className="btn-lg" />
     </>
   );
 }

@@ -5,7 +5,7 @@ import type { ButtonProps } from '../ui/Button';
 import { Button } from '../ui/Button';
 import { Icon } from '../ui/Icon';
 import { ScreenReader } from '../ui/ScreenReader';
-import { useDrawerContext } from './Drawer';
+import { useDrawer } from './Drawer';
 
 type DrawerButtonProps = ButtonProps;
 
@@ -14,7 +14,7 @@ export function DrawerButton({
   className,
   ...props
 }: DrawerButtonProps) {
-  const { open } = useDrawerContext();
+  const { open } = useDrawer();
   const classes = classNames('btn-ghost', className);
 
   return (

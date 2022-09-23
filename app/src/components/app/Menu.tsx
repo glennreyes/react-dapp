@@ -1,0 +1,32 @@
+import { DrawerMenu } from '../drawer/DrawerMenu';
+import { DrawerMenuItem } from '../drawer/DrawerMenuItem';
+import { DrawerMenuLink } from '../drawer/DrawerMenuLink';
+
+export function Menu() {
+  return (
+    <DrawerMenu>
+      <DrawerMenuItem>
+        <DrawerMenuLink to="/">Home</DrawerMenuLink>
+      </DrawerMenuItem>
+      <DrawerMenuItem>
+        <DrawerMenuLink to="/connect-wallet">1 — Connect Wallet</DrawerMenuLink>
+      </DrawerMenuItem>
+      <DrawerMenuItem>
+        <DrawerMenuLink to="/greeter">2 — Greeter</DrawerMenuLink>
+      </DrawerMenuItem>
+      <DrawerMenuItem>
+        <DrawerMenuLink to="/ether-wallet">
+          3 — Deposit & Withdraw Ether
+        </DrawerMenuLink>
+      </DrawerMenuItem>
+      <DrawerMenuItem>
+        <DrawerMenuLink to="/erc-20-token">
+          4 — Create an ERC-20 Token
+        </DrawerMenuLink>
+      </DrawerMenuItem>
+      <DrawerMenuItem>
+        <DrawerMenuLink to="/erc-721-nft">5 — Create an NFT</DrawerMenuLink>
+      </DrawerMenuItem>
+    </DrawerMenu>
+  );
+}

@@ -16,6 +16,7 @@ export function ConnectWalletButton({
   const { connect } = useConnect();
   const { disconnect } = useDisconnect();
   const classes = classNames(
+    'normal-case',
     isConnected ? 'btn-secondary' : 'btn-primary',
     className,
   );

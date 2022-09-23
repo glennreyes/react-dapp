@@ -1,20 +1,39 @@
 export function HomePage() {
   return (
     <>
-      <h1 className="text-center">Welcome to the React Dapp</h1>
+      <h4 className="text-primary">Welcome to the</h4>
+      <h1>React Dapp Workshop! ☀️ 🇪🇸</h1>
       <p>
-        In this workshop we will build a simple Dapp using React and Ethereum.
-        We will walk through various exercises starting by getting familiar with
-        the stack, then compiling and deploying a simple smart contract and then
-        interact with it in the React app.
+        In this workshop we will be working on a simple Dapp using React and
+        Ethereum. We will walk through various exercises starting by getting an
+        overview of the stack.
       </p>
       <p>
-        In order to perform transactions we will need to set up a wallet (in
-        this workshop we will be using MetaMask) and connect it to the dapp.
+        After we feel comfortable working with the stack, we will be compiling
+        Ethereum smart contracts and deploy them to a local Ethereum Virtual
+        Machine (EVM). We will then interact with the contracts on the Ethereum
+        blockchain using a React app.
       </p>
+      <h2>The tech stack</h2>
+      <ul>
+        <li>
+          <code>app/</code>: React application using{' '}
+          <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
+            Vite
+          </a>
+        </li>
+        <li>
+          <code>protocol/</code>: Ethereum development environment using{' '}
+          <a href="https://hardhat.org" target="_blank" rel="noreferrer">
+            Hardhat
+          </a>
+        </li>
+      </ul>
+      <h2>Useful commands</h2>
+      {/* TODO */}
       <p>
-        Towards the end we will be creating a simple ERC20 token and ERC721
-        token (NFT) and interact with it.
+        To get started with the first exercise, proceed by clicking the button
+        below:
       </p>
     </>
   );

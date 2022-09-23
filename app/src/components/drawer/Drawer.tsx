@@ -1,21 +1,14 @@
 import type { ComponentProps, ReactElement } from 'react';
-import { createContext, useContext, useState } from 'react';
+import { useContext, useState } from 'react';
 
 import { classNames } from '../../utils';
+import { DrawerContext } from './DrawerContext';
 
-interface DrawerContextValues {
-  isOpen: boolean;
-  close: () => void;
-  open: () => void;
-}
-
-const DrawerContext = createContext<DrawerContextValues | null>(null);
-
-export function useDrawerContext() {
+export function useDrawer() {
   const context = useContext(DrawerContext);
 
   if (!context) {
-    throw new Error('useDrawerContext must be used within a DrawerContext');
+    throw new Error('useDrawer must be used within a Drawer');
   }
 
   return context;
@@ -48,7 +41,6 @@ export function Drawer({
         />
         <div className="drawer-content">{children}</div>
         <div className="drawer-side">
-          {/* eslint-disable-next-line jsx-a11y/label-has-associated-control  */}
           <button className="drawer-overlay" onClick={close} />
           {menu}
         </div>

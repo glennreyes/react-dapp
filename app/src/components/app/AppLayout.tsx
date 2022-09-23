@@ -3,15 +3,15 @@ import { Outlet } from 'react-router-dom';
 import { ConnectWalletButton } from '../../exercises/1-connect-wallet/ConnectWalletButton';
 import { Drawer } from '../drawer/Drawer';
 import { DrawerButton } from '../drawer/DrawerButton';
-import { DrawerMenu } from '../drawer/DrawerMenu';
-import { Article } from './Article';
-import { Container } from './Container';
-import { Main } from './Main';
-import { Navbar } from './Navbar';
+import { Article } from '../layout/Article';
+import { Container } from '../layout/Container';
+import { Main } from '../layout/Main';
+import { Navbar } from '../layout/Navbar';
+import { Menu } from './Menu';
 
 export function AppLayout() {
   return (
-    <Drawer menu={<DrawerMenu />}>
+    <Drawer menu={<Menu />}>
       <Navbar title="React Dapp">
         <ConnectWalletButton />
         <DrawerButton>Open Drawer</DrawerButton>
