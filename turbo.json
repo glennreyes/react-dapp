@@ -1,0 +1,20 @@
+{
+  "$schema": "https://turborepo.org/schema.json",
+  "pipeline": {
+    "dev": {
+      "cache": false
+    },
+    "build": {
+      "outputs": [],
+      "outputMode": "new-only"
+    },
+    "format": {
+      "outputs": [],
+      "outputMode": "new-only"
+    },
+    "lint": {
+      "outputs": [],
+      "outputMode": "new-only"
+    }
+  }
+}

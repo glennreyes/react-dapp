@@ -1,0 +1,34 @@
+{
+  "name": "app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "format": "pnpm lint --fix",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "@tsconfig/vite-react": "^1.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "@vitejs/plugin-react": "^2.1.0",
+    "eslint": "^8.23.1",
+    "eslint-config-banana": "^1.0.0",
+    "typescript": "^4.6.4",
+    "vite": "^3.1.0"
+  },
+  "eslintConfig": {
+    "extends": "banana/react",
+    "parserOptions": {
+      "project": "./tsconfig.json"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "react-dapp",
+  "version": "1.0.0",
+  "private": true,
+  "author": "Glenn Reyes <glenn@glennreyes.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "format": "pnpm prettier && turbo run format",
+    "preview": "turbo run preview",
+    "prettier": "prettier --cache --list-different **/*.{json,md,ts,tsx,yaml}",
+    "lint": "turbo run lint"
+  },
+  "devDependencies": {
+    "eslint": "^8.23.1",
+    "eslint-config-banana": "^1.0.0",
+    "prettier": "^2.7.1",
+    "turbo": "^1.5.2"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all"
+  }
+}
