@@ -25,6 +25,10 @@
     },
     "node": {
       "cache": false
+    },
+    "typecheck": {
+      "outputs": [],
+      "outputMode": "new-only"
     }
   }
 }

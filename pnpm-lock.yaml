@@ -41,9 +41,13 @@ importers:
 
   protocol:
     specifiers:
+      '@nomicfoundation/hardhat-chai-matchers': ^1.0.3
+      '@nomicfoundation/hardhat-network-helpers': ^1.0.6
       '@nomicfoundation/hardhat-toolbox': ^2.0.0
       hardhat: ^2.11.2
     devDependencies:
+      '@nomicfoundation/hardhat-chai-matchers': 1.0.3_u4bbm4ajgevldrm2ufutb7vine
+      '@nomicfoundation/hardhat-network-helpers': 1.0.6_hardhat@2.11.2
       '@nomicfoundation/hardhat-toolbox': 2.0.0_arz2pjsexbnfbviumqvlu5osza
       hardhat: 2.11.2_qv3zdqwr5cvvfboiktsp7a3dfa
 
@@ -2335,7 +2339,7 @@ packages:
       create-hash: 1.2.0
       evp_bytestokey: 1.0.3
       inherits: 2.0.4
-      safe-buffer: 5.1.2
+      safe-buffer: 5.2.1
     dev: true
 
   /browserslist/4.21.4:
@@ -2360,7 +2364,7 @@ packages:
     dependencies:
       bs58: 4.0.1
       create-hash: 1.2.0
-      safe-buffer: 5.1.2
+      safe-buffer: 5.2.1
     dev: true
 
   /buffer-from/1.1.2:
@@ -2723,7 +2727,7 @@ packages:
       create-hash: 1.2.0
       inherits: 2.0.4
       ripemd160: 2.0.2
-      safe-buffer: 5.1.2
+      safe-buffer: 5.2.1
       sha.js: 2.4.11
     dev: true
 
@@ -3750,7 +3754,7 @@ packages:
       keccak: 3.0.2
       pbkdf2: 3.1.2
       randombytes: 2.1.0
-      safe-buffer: 5.1.2
+      safe-buffer: 5.2.1
       scrypt-js: 3.0.1
       secp256k1: 4.0.3
       setimmediate: 1.0.5
@@ -5712,7 +5716,7 @@ packages:
       create-hash: 1.2.0
       create-hmac: 1.1.7
       ripemd160: 2.0.2
-      safe-buffer: 5.1.2
+      safe-buffer: 5.2.1
       sha.js: 2.4.11
     dev: true
 
@@ -5912,7 +5916,7 @@ packages:
   /randombytes/2.1.0:
     resolution: {integrity: sha512-vYl3iOX+4CKUWuxGi9Ukhie6fsqXqS9FE2Zaic4tNFD2N2QQaXOMFbuKK4QmDHC0JO6B1Zp41J0LpT0oR68amQ==}
     dependencies:
-      safe-buffer: 5.1.2
+      safe-buffer: 5.2.1
     dev: true
 
   /raw-body/2.5.1:
