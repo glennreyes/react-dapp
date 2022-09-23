@@ -5,9 +5,9 @@ import {
   RouterProvider,
 } from 'react-router-dom';
 
-import { AppLayout } from './layout/AppLayout';
-import { ConnectWalletPage } from './pages/ConnectWalletPage';
-import { HomePage } from './pages/HomePage';
+import { AppLayout } from '../layout/AppLayout';
+import { ConnectWalletPage } from '../pages/ConnectWalletPage';
+import { HomePage } from '../pages/HomePage';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,8 +18,6 @@ const router = createBrowserRouter(
   ),
 );
 
-function App() {
+export function Router() {
   return <RouterProvider router={router} />;
 }
-
-export default App;
