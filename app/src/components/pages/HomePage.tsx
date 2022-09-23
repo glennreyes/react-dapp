@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import { PageNavigation } from '../page-navigation/PageNavigation';
 import { PageNavigationLink } from '../page-navigation/PageNavigationLink';
 import { Code } from '../ui/Code';
@@ -20,7 +22,27 @@ export function HomePage() {
         will then interact with the contracts on the Ethereum blockchain using a
         React app.
       </p>
-      <h2>📚 The tech stack</h2>
+      <h2>📚 Table of contents</h2>
+      <ol>
+        <li>
+          <Link to="/connect-wallet">Exercise 1 — Connect Wallet</Link>
+        </li>
+        <li>
+          <Link to="/greeter">Exercise 2 — Read and Send Transactions</Link>
+        </li>
+        <li>
+          <Link to="/ether-wallet">
+            Exercise 3 — Deposit and Withdraw Ether
+          </Link>
+        </li>
+        <li>
+          <Link to="/erc-20-token">Exercise 4 — Create an ERC-20 Token</Link>
+        </li>
+        <li>
+          <Link to="/erc-721-nft">Exercise 5 — Create an NFT</Link>
+        </li>
+      </ol>
+      <h2>🍽 The tech stack</h2>
       <ul>
         <li>
           <code>app/</code>: React application using{' '}
@@ -54,10 +76,6 @@ export function HomePage() {
       <Code>
         <CodeLine>pnpm run deploy</CodeLine>
       </Code>
-      <p>
-        To get started with the first exercise, proceed by clicking the button
-        below:
-      </p>
       <PageNavigation className="lg:flex-row-reverse">
         <PageNavigationLink to="/connect-wallet">
           Exercise 1 — Connect Wallet
