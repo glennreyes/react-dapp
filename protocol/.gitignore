@@ -5,6 +5,9 @@ coverage.json
 typechain
 typechain-types
 
-#Hardhat files
+# Hardhat files
 cache
 artifacts
+
+# ESLint cache
+.eslintcache

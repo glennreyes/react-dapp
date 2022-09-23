@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "format": "pnpm lint --fix",
-    "lint": "eslint .",
+    "lint": "eslint --cache .",
     "preview": "vite preview",
     "typecheck": "tsc"
   },

@@ -41,14 +41,14 @@ importers:
 
   protocol:
     specifiers:
-      '@nomicfoundation/hardhat-chai-matchers': ^1.0.3
-      '@nomicfoundation/hardhat-network-helpers': ^1.0.6
       '@nomicfoundation/hardhat-toolbox': ^2.0.0
+      eslint: ^8.23.1
+      eslint-config-banana: ^1.0.0
       hardhat: ^2.11.2
     devDependencies:
-      '@nomicfoundation/hardhat-chai-matchers': 1.0.3_u4bbm4ajgevldrm2ufutb7vine
-      '@nomicfoundation/hardhat-network-helpers': 1.0.6_hardhat@2.11.2
       '@nomicfoundation/hardhat-toolbox': 2.0.0_arz2pjsexbnfbviumqvlu5osza
+      eslint: 8.23.1
+      eslint-config-banana: 1.0.0_4zbvgrzaoioiwyrswprkhem4hq
       hardhat: 2.11.2_qv3zdqwr5cvvfboiktsp7a3dfa
 
 packages:
@@ -2966,6 +2966,10 @@ packages:
       inherits: 2.0.4
       minimalistic-assert: 1.0.1
       minimalistic-crypto-utils: 1.0.1
+    dev: true
+
+  /emoji-regex/10.1.0:
+    resolution: {integrity: sha512-xAEnNCT3w2Tg6MA7ly6QqYJvEoY1tm9iIjJ3yMKK9JPlWuRHAMoe5iETwQnx3M9TVbFMfsrBgWKR+IsmswwNjg==}
     dev: true
 
   /emoji-regex/7.0.3:

@@ -7,13 +7,19 @@
     "deploy": "hardhat run --network localhost scripts/deploy.ts",
     "node": "hardhat node",
     "format": "pnpm lint --fix",
-    "lint": "eslint .",
+    "lint": "eslint --cache .",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@nomicfoundation/hardhat-chai-matchers": "^1.0.3",
-    "@nomicfoundation/hardhat-network-helpers": "^1.0.6",
     "@nomicfoundation/hardhat-toolbox": "^2.0.0",
+    "eslint": "^8.23.1",
+    "eslint-config-banana": "^1.0.0",
     "hardhat": "^2.11.2"
+  },
+  "eslintConfig": {
+    "extends": "banana",
+    "parserOptions": {
+      "project": "./tsconfig.json"
+    }
   }
 }
