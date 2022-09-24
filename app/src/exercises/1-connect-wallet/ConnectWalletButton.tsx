@@ -1,10 +1,10 @@
+import { useAccount, useConnect, useDisconnect } from 'wagmi';
+import { MetaMaskConnector } from 'wagmi/connectors/metaMask';
+
 import { Address } from '../../components/ui/Address';
 import type { ButtonProps } from '../../components/ui/Button';
 import { Button } from '../../components/ui/Button';
 import { classNames } from '../../utils';
-import { useAccount } from './useAccount';
-import { useConnect } from './useConnect';
-import { useDisconnect } from './useDisconnect';
 
 type ConnectWalletButtonProps = ButtonProps;
 
@@ -12,9 +12,11 @@ export function ConnectWalletButton({
   className,
   ...props
 }: ConnectWalletButtonProps) {
+  // TODO: Solve these missing parts
   const { address, isConnected } = useAccount();
-  const { connect } = useConnect();
+  const { connect } = useConnect({ connector: new MetaMaskConnector() });
   const { disconnect } = useDisconnect();
+
   const classes = classNames(
     'normal-case',
     isConnected ? 'btn-secondary' : 'btn-primary',
@@ -23,17 +25,17 @@ export function ConnectWalletButton({
 
   if (isConnected) {
     const textClasses = classNames(
-      'btn btn-ghost btn-disabled no-animation normal-case gap-1',
+      'btn btn-ghost btn-disabled text-primary-content no-animation normal-case gap-2',
       className,
     );
 
     return (
-      <div className="flex items-center">
+      <div className="flex items-center gap-1">
         <p className={textClasses}>
           {address ? (
             <>
-              <span>Connected to: </span>
-              <Address className="text-primary-content">{address}</Address>
+              <span>Connected to:</span>
+              <Address className="text-secondary-content">{address}</Address>
             </>
           ) : (
             <span>Connected</span>

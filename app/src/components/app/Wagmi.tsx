@@ -1,10 +1,18 @@
-import { getDefaultProvider } from 'ethers';
 import type { ReactElement } from 'react';
-import { createClient, WagmiConfig } from 'wagmi';
+import { chain, configureChains, createClient, WagmiConfig } from 'wagmi';
+import { MetaMaskConnector } from 'wagmi/connectors/metaMask';
+import { jsonRpcProvider } from 'wagmi/providers/jsonRpc';
+
+const { chains, provider, webSocketProvider } = configureChains(
+  [chain.hardhat],
+  [jsonRpcProvider({ rpc: () => ({ http: 'http://localhost:8545' }) })],
+);
 
 const client = createClient({
   autoConnect: true,
-  provider: getDefaultProvider(),
+  connectors: [new MetaMaskConnector({ chains })],
+  provider,
+  webSocketProvider,
 });
 
 interface WagmiProps {

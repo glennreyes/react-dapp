@@ -18,13 +18,7 @@ interface DrawerProps extends ComponentProps<'div'> {
   menu: ReactElement;
 }
 
-export function Drawer({
-  children,
-  className,
-  id,
-  menu,
-  ...props
-}: DrawerProps) {
+export function Drawer({ children, className, menu, ...props }: DrawerProps) {
   const classes = classNames('drawer drawer-end', className);
   const [isOpen, setOpen] = useState(false);
   const close = () => setOpen(false);
@@ -35,7 +29,7 @@ export function Drawer({
       <div className={classes} {...props}>
         <input
           checked={isOpen}
-          id={id}
+          onChange={() => undefined}
           type="checkbox"
           className="drawer-toggle"
         />
