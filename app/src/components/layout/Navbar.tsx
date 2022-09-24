@@ -8,7 +8,10 @@ interface NavbarProps extends ComponentProps<'nav'> {
 }
 
 export function Navbar({ children, className, title, ...props }: NavbarProps) {
-  const classes = classNames('navbar bg-base-200', className);
+  const classes = classNames(
+    'navbar bg-base-200/50 backdrop-blur-xl sticky top-0 z-10',
+    className,
+  );
 
   return (
     <nav className={classes} {...props}>
