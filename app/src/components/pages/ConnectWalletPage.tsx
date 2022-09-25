@@ -14,6 +14,9 @@ export function ConnectWalletPage() {
   const { isConnected } = useAccount();
   const network = useNetwork();
 
+  const isFirstTaskCompleted = isConnected;
+  const isSecondTaskCompleted = network.chain?.id === chain.hardhat.id;
+
   return (
     <>
       <Subheading>Exercise 1</Subheading>
@@ -41,12 +44,12 @@ export function ConnectWalletPage() {
           to solve the missing pieces.
         </li>
       </ol>
-      <Window isCompleted={isConnected}>
+      <Window isCompleted={isFirstTaskCompleted}>
         <ConnectWalletButton className="btn-lg btn" />
       </Window>
-      <h2>Task 2 — Switch Network</h2>
-      {isConnected && (
+      {isFirstTaskCompleted && (
         <>
+          <h2>Task 2 — Switch Network</h2>
           <p>
             We will be using the Hardhat network on localhost. In this step we
             want to make sure that the wallet uses the selected network.
@@ -70,30 +73,36 @@ export function ConnectWalletPage() {
             In case it worked without doing anything, try to switch to a
             different network in MetaMask and see what happens in the app.
           </blockquote>
-          <Window isCompleted={network.chain?.id === chain.hardhat.id}>
+          <Window isCompleted={isSecondTaskCompleted}>
             <SwitchNetworkButton className="btn-lg btn" />
           </Window>
         </>
       )}
-      <h2>⭐️ Bonus Task — Display Balance</h2>
-      <ol>
-        <li>
-          Go to{' '}
-          <code>/app/src/exercises/1-connect-wallet/BalanceDisplay.tsx</code>{' '}
-          and try to get this right.
-        </li>
-      </ol>
-      <Window>
-        <BalanceDisplay className="btn-lg btn" />
-      </Window>
-      <PageNavigation>
-        <PageNavigationLink direction="back" to="/">
-          Home
-        </PageNavigationLink>
-        <PageNavigationLink to="/ether-wallet">
-          Exercise 2 — Read and Send Transactions
-        </PageNavigationLink>
-      </PageNavigation>
+      {isSecondTaskCompleted && (
+        <>
+          <h2>⭐️ Bonus Task — Display Balance</h2>
+          <ol>
+            <li>
+              Go to{' '}
+              <code>
+                /app/src/exercises/1-connect-wallet/BalanceDisplay.tsx
+              </code>{' '}
+              and try to get this right.
+            </li>
+          </ol>
+          <Window>
+            <BalanceDisplay className="btn-lg btn" />
+          </Window>
+          <PageNavigation>
+            <PageNavigationLink direction="back" to="/">
+              Home
+            </PageNavigationLink>
+            <PageNavigationLink to="/ether-wallet">
+              Exercise 2 — Read and Send Transactions
+            </PageNavigationLink>
+          </PageNavigation>
+        </>
+      )}
     </>
   );
 }
