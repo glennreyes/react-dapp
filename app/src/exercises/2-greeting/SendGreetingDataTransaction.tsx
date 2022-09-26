@@ -7,8 +7,7 @@ import { Alert } from '../../components/ui/Alert';
 import { Button } from '../../components/ui/Button';
 import { TextInput } from '../../components/ui/TextInput';
 import { classNames } from '../../utils';
-
-const contractAddress = '0x5FbDB2315678afecb367f032d93F642f64180aa3';
+import { contractAddress } from './constants';
 
 export interface SendGreetingDataTransactionProps {
   onSuccess?: (data: unknown) => void;

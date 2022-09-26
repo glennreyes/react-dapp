@@ -5,8 +5,7 @@ import { useContractRead } from 'wagmi';
 import { Button } from '../../components/ui/Button';
 import { Icon } from '../../components/ui/Icon';
 import { Loading } from '../../components/ui/Loading';
-
-const contractAddress = '0x5FbDB2315678afecb367f032d93F642f64180aa3';
+import { contractAddress } from './constants';
 
 export interface ReadGreetingDataProps {
   onSuccess?: (data: unknown) => void;
