@@ -43,6 +43,9 @@
     "extends": "banana/react",
     "parserOptions": {
       "project": "./tsconfig.json"
+    },
+    "rules": {
+      "react/no-unescaped-entities": "off"
     }
   }
 }

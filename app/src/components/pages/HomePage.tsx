@@ -45,13 +45,13 @@ export function HomePage() {
       <h2>🍽 The tech stack</h2>
       <ul>
         <li>
-          <code>app/</code>: React application using{' '}
+          <code>/app</code>: React application using{' '}
           <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
             Vite
           </a>
         </li>
         <li>
-          <code>protocol/</code>: Ethereum development environment using{' '}
+          <code>/protocol</code>: Ethereum development environment using{' '}
           <a href="https://hardhat.org" target="_blank" rel="noreferrer">
             Hardhat
           </a>

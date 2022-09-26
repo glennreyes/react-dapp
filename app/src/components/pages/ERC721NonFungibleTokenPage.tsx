@@ -18,6 +18,8 @@ export function ERC721NonFungibleTokenPage() {
         Amet maxime aperiam doloremque dignissimos consequatur corrupti
         praesentium aspernatur placeat esse laboriosam.
       </p>
+      <h2>Task 1 — Mint some NFT</h2>
+      <h2>Task 1 — Mint some NFT</h2>
       <PageNavigation>
         <PageNavigationLink direction="back" to="/erc-20-token">
           Exercise 4 — Create an ERC-20 Token

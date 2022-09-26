@@ -18,6 +18,29 @@ export function ERC20TokenPage() {
         Amet maxime aperiam doloremque dignissimos consequatur corrupti
         praesentium aspernatur placeat esse laboriosam.
       </p>
+      <h2>Task 1 — Mint some token</h2>
+      <h2>Task 2 — Transfer some token</h2>
+      <h2>Task 3 — Burn some token</h2>
+      <h2>Task 4 — Transfer from another address</h2>
+      <h2>⭐️ Bonus Task — Use ERC-20 from OpenZeppelin</h2>
+      <p>
+        Replace our custom ERC20 contract with the OpenZeppelin ERC-20 token
+        standard implementation.
+      </p>
+      <p>
+        Check out:{' '}
+        <ul>
+          <li>
+            <a
+              href="https://github.com/OpenZeppelin/openzeppelin-contracts/tree/master/contracts/token/ERC20"
+              target="_blank"
+              rel="noreferrer"
+            >
+              https://github.com/OpenZeppelin/openzeppelin-contracts/tree/master/contracts/token/ERC20
+            </a>
+          </li>
+        </ul>
+      </p>
       <PageNavigation>
         <PageNavigationLink direction="back" to="/ether-wallet">
           Exercise 3 — Deposit and Withdraw Ether
