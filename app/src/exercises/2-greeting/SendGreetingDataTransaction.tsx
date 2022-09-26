@@ -3,6 +3,7 @@ import type { FormEvent } from 'react';
 import { useCallback, useState } from 'react';
 import { useContractWrite, usePrepareContractWrite } from 'wagmi';
 
+import { Alert } from '../../components/ui/Alert';
 import { Button } from '../../components/ui/Button';
 import { TextInput } from '../../components/ui/TextInput';
 import { classNames } from '../../utils';
@@ -22,9 +23,14 @@ export function SendGreetingDataTransaction({
     args: [greeting],
     contractInterface: greeter.abi,
     functionName: 'setGreeting',
-    onSuccess,
   });
-  const { isLoading, write } = useContractWrite(config);
+  const { isLoading, isSuccess, reset, write } = useContractWrite({
+    ...config,
+    onSuccess: (data) => {
+      onSuccess?.(data);
+      setGreeting('');
+    },
+  });
 
   const buttonClasses = classNames(
     'btn-lg btn-primary',
@@ -35,9 +41,13 @@ export function SendGreetingDataTransaction({
     (event: FormEvent<HTMLFormElement>) => {
       event.preventDefault();
 
+      if (isSuccess) {
+        return reset();
+      }
+
       write?.();
     },
-    [write],
+    [isSuccess, reset, write],
   );
 
   return (
@@ -46,15 +56,16 @@ export function SendGreetingDataTransaction({
       onSubmit={handleSubmit}
     >
       <TextInput
-        disabled={isLoading}
+        disabled={isLoading || isSuccess}
         id="greeting"
         label="Greeting"
         onChange={(event) => setGreeting(event.target.value)}
         value={greeting}
       />
       <Button className={buttonClasses} disabled={isLoading} type="submit">
-        Submit
+        {isSuccess ? 'Send new transaction' : 'Submit'}
       </Button>
+      {isSuccess && <Alert>Transaction successful!</Alert>}
     </form>
   );
 

@@ -3,6 +3,7 @@ import { useTitle } from 'react-use';
 
 import type { ReadGreetingDataProps } from '../../exercises/2-greeting/ReadGreetingData';
 import { ReadGreetingData } from '../../exercises/2-greeting/ReadGreetingData';
+import type { SendGreetingDataTransactionProps } from '../../exercises/2-greeting/SendGreetingDataTransaction';
 import { SendGreetingDataTransaction } from '../../exercises/2-greeting/SendGreetingDataTransaction';
 import { PageNavigation } from '../page-navigation/PageNavigation';
 import { PageNavigationLink } from '../page-navigation/PageNavigationLink';
@@ -20,6 +21,18 @@ export function GreeterPage() {
       setReadGreetingCompleted(true);
     }
   };
+
+  const [
+    isSendGreetingTransactionCompleted,
+    setSendGreetingTransactionCompleted,
+  ] = useState(false);
+
+  const handleSendGreetingTransactionCompleted: SendGreetingDataTransactionProps['onSuccess'] =
+    (data) => {
+      if (data && !isSendGreetingTransactionCompleted) {
+        setSendGreetingTransactionCompleted(true);
+      }
+    };
 
   return (
     <>
@@ -97,7 +110,7 @@ contract Greeter {
       </ol>
       <p>
         Check out <a href="https://wagmi.sh/docs">wagmi Docs</a> for further
-        help on get this implemented.
+        help on getting this implemented.
       </p>
       <Window isCompleted={isReadGreetingCompleted}>
         <ReadGreetingData onSuccess={handleReadGreetingCompleted} />
@@ -119,10 +132,12 @@ contract Greeter {
       </ol>
       <p>
         Check out <a href="https://wagmi.sh/docs">wagmi Docs</a> for further
-        help on get this implemented.
+        help on getting this implemented.
       </p>
-      <Window>
-        <SendGreetingDataTransaction />
+      <Window isCompleted={isSendGreetingTransactionCompleted}>
+        <SendGreetingDataTransaction
+          onSuccess={handleSendGreetingTransactionCompleted}
+        />
       </Window>
       <PageNavigation>
         <PageNavigationLink direction="back" to="/connect-wallet">
