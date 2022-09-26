@@ -23,14 +23,14 @@ export function Window({
     <div className={classes} {...props}>
       <div className="absolute top-3 right-3">
         {isCompleted ? (
-          <Icon className="text-success-content" icon={CheckCircleIcon} />
+          <Icon className="text-success" icon={CheckCircleIcon} />
         ) : isCompleted === false ? (
-          <Icon className="text-error-content" icon={XCircleIcon} />
+          <Icon className="text-error" icon={XCircleIcon} />
         ) : null}
       </div>
 
-      <div className="bg-base-200 flex items-center justify-center gap-2 px-4 py-16">
-        <div>{children}</div>
+      <div className="bg-base-200 flex flex-col items-center justify-center gap-2 px-4 py-16">
+        {children}
       </div>
     </div>
   );

@@ -97,7 +97,7 @@ export function ConnectWalletPage() {
             <PageNavigationLink direction="back" to="/">
               Home
             </PageNavigationLink>
-            <PageNavigationLink to="/ether-wallet">
+            <PageNavigationLink to="/greeter">
               Exercise 2 — Read and Send Transactions
             </PageNavigationLink>
           </PageNavigation>

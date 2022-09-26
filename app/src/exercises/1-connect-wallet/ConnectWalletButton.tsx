@@ -18,14 +18,13 @@ export function ConnectWalletButton({
   const { disconnect } = useDisconnect();
 
   const classes = classNames(
-    'normal-case',
     isConnected ? 'btn-secondary' : 'btn-primary',
     className,
   );
 
   if (isConnected) {
     const textClasses = classNames(
-      'btn btn-ghost btn-disabled text-primary-content no-animation normal-case gap-2',
+      'btn btn-ghost btn-disabled text-base-content no-animation normal-case gap-2',
       className,
     );
 
@@ -35,7 +34,7 @@ export function ConnectWalletButton({
           {address ? (
             <>
               <span>Connected to:</span>
-              <Address className="text-secondary-content">{address}</Address>
+              <Address className="text-accent-focus">{address}</Address>
             </>
           ) : (
             <span>Connected</span>

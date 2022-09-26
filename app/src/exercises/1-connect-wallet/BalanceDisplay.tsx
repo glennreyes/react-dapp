@@ -10,7 +10,7 @@ export function BalanceDisplay({ className, ...props }: BalanceDisplayProps) {
   const { data } = useBalance({ addressOrName: address });
 
   const textClasses = classNames(
-    'btn btn-ghost btn-disabled text-primary-content no-animation normal-case gap-2',
+    'btn btn-ghost btn-disabled text-base-content no-animation normal-case gap-2',
     className,
   );
 
@@ -21,7 +21,7 @@ export function BalanceDisplay({ className, ...props }: BalanceDisplayProps) {
   return (
     <p className={textClasses} {...props}>
       Balance:{' '}
-      <span className="text-secondary-content">
+      <span className="text-accent-content">
         {data ? `${data.formatted} ${data.symbol}` : 'N/A'}
       </span>
     </p>

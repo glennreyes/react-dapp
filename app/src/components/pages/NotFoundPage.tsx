@@ -16,7 +16,7 @@ export function NotFoundPage() {
         try again.
       </p>
       <Divider />
-      <Link className="btn btn-lg btn-primary normal-case" to="/">
+      <Link className="btn btn-lg btn-primary" to="/">
         Go back to the home page
       </Link>
     </>

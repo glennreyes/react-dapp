@@ -1,8 +1,13 @@
-import { useCallback } from 'react';
-import { chain, useNetwork, useSwitchNetwork } from 'wagmi';
+import {
+  CheckCircleIcon,
+  ExclamationCircleIcon,
+} from '@heroicons/react/24/solid';
+import { useCallback, useMemo } from 'react';
+import { allChains, chain, useNetwork, useSwitchNetwork } from 'wagmi';
 
 import type { ButtonProps } from '../../components/ui/Button';
 import { Button } from '../../components/ui/Button';
+import { Icon } from '../../components/ui/Icon';
 import { classNames } from '../../utils';
 
 type SwitchNetworkButtonProps = ButtonProps;
@@ -14,37 +19,60 @@ export function SwitchNetworkButton({
   // TODO: Solve these missing parts
   const network = useNetwork();
   const { switchNetwork } = useSwitchNetwork();
-  const handleSwitchNetworkClick = useCallback(() => {
-    if (network.chain?.id === chain.hardhat.id) {
-      return;
+  const handleSwitchNetworkClick = useCallback(
+    () => switchNetwork?.(chain.hardhat.id),
+    [switchNetwork],
+  );
+  const isHardhatNetwork = network.chain?.id === chain.hardhat.id;
+  const chainName = useMemo(() => {
+    if (isHardhatNetwork) {
+      return (
+        <>
+          {network.chain?.name}
+          <Icon className="text-success" icon={CheckCircleIcon} />
+        </>
+      );
     }
 
-    return switchNetwork?.(chain.hardhat.id);
-  }, [network.chain?.id, switchNetwork]);
-
-  if (network.chain?.id === chain.hardhat.id) {
-    const textClasses = classNames(
-      'btn btn-ghost btn-disabled text-primary-content no-animation normal-case gap-2',
-      className,
-    );
-
     return (
-      <p className={textClasses}>
-        Connected to{' '}
-        <span className="text-secondary-content">{network.chain.name}</span>
-      </p>
+      <>
+        {
+          allChains.find(
+            (currentChain) => currentChain.id === network.chain?.id,
+          )?.name
+        }
+        <Icon className="text-success" icon={ExclamationCircleIcon} />
+      </>
     );
-  }
+  }, [isHardhatNetwork, network.chain]);
 
-  const classes = classNames('normal-case', 'btn-warning', className);
-
-  if (!switchNetwork) {
+  if (!switchNetwork || !network.chain) {
     return null;
   }
 
+  const classes = classNames('btn-warning', className);
+  const textClasses = classNames(
+    'btn btn-ghost btn-disabled text-base-content no-animation normal-case gap-2',
+    className,
+  );
+
   return (
-    <Button className={classes} onClick={handleSwitchNetworkClick} {...props}>
-      Switch Network
-    </Button>
+    <div className="flex items-center gap-1">
+      <p className={textClasses}>
+        Connected to{' '}
+        <span className="text-accent-content inline-flex items-center gap-1">
+          {chainName}
+        </span>
+      </p>
+      {!isHardhatNetwork && (
+        <Button
+          className={classes}
+          onClick={handleSwitchNetworkClick}
+          {...props}
+        >
+          Switch Network
+        </Button>
+      )}
+    </div>
   );
 }
