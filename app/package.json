@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.0.11",
+    "@react-dapp/protocol": "workspace:*",
     "@tsconfig/vite-react": "^1.0.1",
     "autoprefixer": "^10.4.12",
     "daisyui": "^2.31.0",
