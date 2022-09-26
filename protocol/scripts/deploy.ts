@@ -11,10 +11,8 @@ async function main() {
   // const Lock = await ethers.getContractFactory('Lock');
   // const lock = await Lock.deploy(unlockTime, { value: lockedAmount });
   // await lock.deployed();
-  // console.log(
-  //   `Lock with 1 ETH and unlock timestamp ${unlockTime} deployed to ${
-  //     (lock as any).address
-  //   }`,
+  // console.info(
+  //   `Lock with 1 ETH and unlock timestamp ${unlockTime} deployed to ${lock.deployTransaction.from}`,
   // );
 
   /**
@@ -23,13 +21,18 @@ async function main() {
   const Greeter = await ethers.getContractFactory('Greeter');
   const greeter = await Greeter.deploy('Hello, React Alicante!');
   await greeter.deployed();
-  console.info(`Greeter deployed to ${(greeter as any).address}`);
+  console.info(`Greeter deployed to ${greeter.deployTransaction.from}`);
+
+  /**
+   * ETHER WALLET
+   */
+  const EtherWallet = await ethers.getContractFactory('EtherWallet');
+  const etherWallet = await EtherWallet.deploy();
+  await etherWallet.deployed();
+  console.info(`EtherWallet deployed to ${greeter.deployTransaction.from}`);
 
   console.info('Deployment completed! 🚀');
 }
-
-// We recommend this pattern to be able to use async/await everywhere
-// and properly handle errors.
 
 (async () => {
   try {
