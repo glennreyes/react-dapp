@@ -5,8 +5,8 @@ const theme = require('tailwindcss/defaultTheme');
 module.exports = {
   content: ['./index.html', './src/**/*.{ts,tsx}'],
   daisyui: {
-    darkTheme: 'coffee',
-    themes: ['garden', 'coffee'],
+    darkTheme: 'dark',
+    themes: ['garden', 'dark'],
   },
   plugins: [
     require('@tailwindcss/typography'),
