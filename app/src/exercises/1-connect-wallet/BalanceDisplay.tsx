@@ -1,6 +1,7 @@
 import type { ComponentProps } from 'react';
 import { useAccount, useBalance } from 'wagmi';
 
+import { NumberDisplay } from '../../components/ui/NumberDisplay';
 import { classNames } from '../../utils';
 
 type BalanceDisplayProps = ComponentProps<'p'>;
@@ -22,7 +23,18 @@ export function BalanceDisplay({ className, ...props }: BalanceDisplayProps) {
     <p className={textClasses} {...props}>
       Balance:{' '}
       <span className="text-accent-content">
-        {data ? `${data.formatted} ${data.symbol}` : 'N/A'}
+        {data ? (
+          <NumberDisplay
+            numberFormat={{
+              currency: 'ETH',
+              maximumFractionDigits: 18,
+              style: 'currency',
+            }}
+            value={data.formatted}
+          />
+        ) : (
+          'N/A'
+        )}
       </span>
     </p>
   );

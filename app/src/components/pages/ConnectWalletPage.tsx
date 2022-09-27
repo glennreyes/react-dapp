@@ -1,9 +1,9 @@
 import { useTitle } from 'react-use';
-import { chain, useAccount, useNetwork } from 'wagmi';
 
 import { BalanceDisplay } from '../../exercises/1-connect-wallet/BalanceDisplay';
 import { ConnectWalletButton } from '../../exercises/1-connect-wallet/ConnectWalletButton';
 import { SwitchNetworkButton } from '../../exercises/1-connect-wallet/SwitchNetworkButton';
+import { useProgress } from '../app/Progress';
 import { PageNavigation } from '../page-navigation/PageNavigation';
 import { PageNavigationLink } from '../page-navigation/PageNavigationLink';
 import { Subheading } from '../ui/SubHeading';
@@ -11,11 +11,8 @@ import { Window } from '../ui/Window';
 
 export function ConnectWalletPage() {
   useTitle('Connect Wallet | React Dapp');
-  const { isConnected } = useAccount();
-  const network = useNetwork();
 
-  const isFirstTaskCompleted = isConnected;
-  const isSecondTaskCompleted = network.chain?.id === chain.hardhat.id;
+  const { isConnectWalletCompleted, isSwitchNetworkCompleted } = useProgress();
 
   return (
     <>
@@ -44,10 +41,10 @@ export function ConnectWalletPage() {
           to solve the missing pieces.
         </li>
       </ol>
-      <Window isCompleted={isFirstTaskCompleted}>
+      <Window isCompleted={isConnectWalletCompleted}>
         <ConnectWalletButton className="btn-lg btn" />
       </Window>
-      {isFirstTaskCompleted && (
+      {isConnectWalletCompleted && (
         <>
           <h2>Task 2 — Switch Network</h2>
           <p>
@@ -73,12 +70,12 @@ export function ConnectWalletPage() {
             In case it worked without doing anything, try to switch to a
             different network in MetaMask and see what happens in the app.
           </blockquote>
-          <Window isCompleted={isSecondTaskCompleted}>
+          <Window isCompleted={isSwitchNetworkCompleted}>
             <SwitchNetworkButton className="btn-lg btn" />
           </Window>
         </>
       )}
-      {isSecondTaskCompleted && (
+      {isSwitchNetworkCompleted && (
         <>
           <h2>⭐️ Bonus Task — Display Balance</h2>
           <ol>

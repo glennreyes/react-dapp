@@ -1,10 +1,8 @@
-import { useState } from 'react';
 import { useTitle } from 'react-use';
 
-import type { ReadGreetingDataProps } from '../../exercises/2-greeting/ReadGreetingData';
 import { ReadGreetingData } from '../../exercises/2-greeting/ReadGreetingData';
-import type { SendGreetingDataTransactionProps } from '../../exercises/2-greeting/SendGreetingDataTransaction';
 import { SendGreetingDataTransaction } from '../../exercises/2-greeting/SendGreetingDataTransaction';
+import { useProgress } from '../app/Progress';
 import { PageNavigation } from '../page-navigation/PageNavigation';
 import { PageNavigationLink } from '../page-navigation/PageNavigationLink';
 import { Subheading } from '../ui/SubHeading';
@@ -12,27 +10,13 @@ import { Window } from '../ui/Window';
 
 export function GreeterPage() {
   useTitle('Greeter | React Dapp');
-  const [isReadGreetingCompleted, setReadGreetingCompleted] = useState(false);
 
-  const handleReadGreetingCompleted: ReadGreetingDataProps['onSuccess'] = (
-    data,
-  ) => {
-    if (data && !isReadGreetingCompleted) {
-      setReadGreetingCompleted(true);
-    }
-  };
-
-  const [
+  const {
+    handleReadGreetingCompleted,
+    handleSendGreetingTransactionCompleted,
+    isReadGreetingCompleted,
     isSendGreetingTransactionCompleted,
-    setSendGreetingTransactionCompleted,
-  ] = useState(false);
-
-  const handleSendGreetingTransactionCompleted: SendGreetingDataTransactionProps['onSuccess'] =
-    (data) => {
-      if (data && !isSendGreetingTransactionCompleted) {
-        setSendGreetingTransactionCompleted(true);
-      }
-    };
+  } = useProgress();
 
   return (
     <>

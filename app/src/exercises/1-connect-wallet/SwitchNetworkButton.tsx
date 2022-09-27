@@ -41,7 +41,7 @@ export function SwitchNetworkButton({
             (currentChain) => currentChain.id === network.chain?.id,
           )?.name
         }
-        <Icon className="text-success" icon={ExclamationCircleIcon} />
+        <Icon className="text-error" icon={ExclamationCircleIcon} />
       </>
     );
   }, [isHardhatNetwork, network.chain]);

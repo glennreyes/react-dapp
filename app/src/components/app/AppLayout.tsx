@@ -11,6 +11,7 @@ import { Footer } from '../layout/Footer';
 import { Main } from '../layout/Main';
 import { Navbar } from '../layout/Navbar';
 import { Menu } from './Menu';
+import { Progress } from './Progress';
 
 export function AppLayout() {
   return (
@@ -24,7 +25,9 @@ export function AppLayout() {
       <Main>
         <Container>
           <Article>
-            <Outlet />
+            <Progress>
+              <Outlet />
+            </Progress>
           </Article>
         </Container>
       </Main>

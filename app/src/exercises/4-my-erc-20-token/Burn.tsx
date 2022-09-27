@@ -1,5 +1,5 @@
-import etherWallet from '@react-dapp/protocol/artifacts/contracts/EtherWallet.sol/EtherWallet.json';
-import { constants, utils } from 'ethers';
+import myToken from '@react-dapp/protocol/artifacts/contracts/MyToken.sol/MyToken.json';
+import { BigNumber } from 'ethers';
 import type { FormEvent } from 'react';
 import { useCallback, useState } from 'react';
 import { useContractWrite, usePrepareContractWrite } from 'wagmi';
@@ -8,25 +8,25 @@ import { Alert } from '../../components/ui/Alert';
 import { Button } from '../../components/ui/Button';
 import { NumberInput } from '../../components/ui/NumberInput';
 import { classNames } from '../../utils';
-import { etherWalletAddress } from './constants';
+import { myTokenAddress } from './constants';
 
-export interface WithdrawEtherProps {
+export interface BurnProps {
   onSuccess?: (data: unknown) => void;
 }
 
-export function WithdrawEther({ onSuccess }: WithdrawEtherProps) {
-  const [value, setValue] = useState('');
+export function Burn({ onSuccess }: BurnProps) {
+  const [amount, setAmount] = useState('');
   const { config } = usePrepareContractWrite({
-    addressOrName: etherWalletAddress,
-    args: [value ? utils.parseEther(value) : constants.Zero],
-    contractInterface: etherWallet.abi,
-    functionName: 'withdraw',
+    addressOrName: myTokenAddress,
+    args: [amount ? BigNumber.from(amount) : undefined],
+    contractInterface: myToken.abi,
+    functionName: 'burn',
   });
   const { isLoading, isSuccess, reset, write } = useContractWrite({
     ...config,
     onSuccess: (data) => {
       onSuccess?.(data);
-      setValue('');
+      setAmount('');
     },
   });
 
@@ -55,11 +55,11 @@ export function WithdrawEther({ onSuccess }: WithdrawEtherProps) {
     >
       <NumberInput
         disabled={isLoading || isSuccess}
-        id="value"
-        label="Amount in ETH"
-        onChange={(event) => setValue(event.target.value)}
+        id="amount"
+        label="Amount of tokens to mint"
+        onChange={(event) => setAmount(event.target.value)}
         required
-        value={value}
+        value={amount}
       />
       <Button className={buttonClasses} disabled={isLoading} type="submit">
         {isSuccess ? 'Send new transaction' : 'Submit'}

@@ -3,6 +3,7 @@ import { useTitle } from 'react-use';
 import { DepositEther } from '../../exercises/3-ether-wallet/DepositEther';
 import { GetBalance } from '../../exercises/3-ether-wallet/GetBalance';
 import { WithdrawEther } from '../../exercises/3-ether-wallet/WithdrawEther';
+import { useProgress } from '../app/Progress';
 import { PageNavigation } from '../page-navigation/PageNavigation';
 import { PageNavigationLink } from '../page-navigation/PageNavigationLink';
 import { Subheading } from '../ui/SubHeading';
@@ -10,6 +11,15 @@ import { Window } from '../ui/Window';
 
 export function EtherWalletPage() {
   useTitle('Ether Wallet | React Dapp');
+
+  const {
+    handleDepositCompleted,
+    handleGetBalanceCompleted,
+    handleWithdrawCompleted,
+    isDepositCompleted,
+    isGetBalanceCompleted,
+    isWithdrawCompleted,
+  } = useProgress();
 
   return (
     <>
@@ -53,29 +63,41 @@ contract EtherWallet {
         the value.
       </p>
       <Window>
-        <DepositEther />
+        <DepositEther onSuccess={handleDepositCompleted} />
       </Window>
-      <h2>Task 2 — Check the balance</h2>
-      <p>
-        Check the balance of the contract by calling the <code>getBalance</code>{' '}
-        function.
-      </p>
-      <Window>
-        <GetBalance />
-      </Window>
-      <h2>Task 3 — Withdraw Ether</h2>
-      <p>
-        Withdraw some Ether from the contract by sending a transaction with the
-        amount you want to withdraw.
-      </p>
-      <Window>
-        <WithdrawEther />
-      </Window>
-      <h2>⭐️ Bonus Task — Explore withdrawing from a different wallet</h2>
-      <p>
-        Sign in to MetaMask with a different wallet and try to withdraw Ether to
-        see what happens.
-      </p>
+      {isDepositCompleted && (
+        <>
+          <h2>Task 2 — Check the balance</h2>
+          <p>
+            Check the balance of the contract by calling the{' '}
+            <code>getBalance</code> function.
+          </p>
+          <Window>
+            <GetBalance onSuccess={handleGetBalanceCompleted} />
+          </Window>
+        </>
+      )}
+      {isGetBalanceCompleted && (
+        <>
+          <h2>Task 3 — Withdraw Ether</h2>
+          <p>
+            Withdraw some Ether from the contract by sending a transaction with
+            the amount you want to withdraw.
+          </p>
+          <Window>
+            <WithdrawEther onSuccess={handleWithdrawCompleted} />
+          </Window>
+        </>
+      )}
+      {isWithdrawCompleted && (
+        <>
+          <h2>⭐️ Bonus Task — Explore withdrawing from a different wallet</h2>
+          <p>
+            Sign in to MetaMask with a different wallet and try to withdraw
+            Ether to see what happens.
+          </p>
+        </>
+      )}
       <PageNavigation>
         <PageNavigationLink direction="back" to="/greeter">
           Exercise 2 — Deposit and Withdraw Ether

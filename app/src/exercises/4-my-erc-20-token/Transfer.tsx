@@ -1,4 +1,4 @@
-import etherWallet from '@react-dapp/protocol/artifacts/contracts/EtherWallet.sol/EtherWallet.json';
+import myToken from '@react-dapp/protocol/artifacts/contracts/MyToken.sol/MyToken.json';
 import { constants, utils } from 'ethers';
 import type { FormEvent } from 'react';
 import { useCallback, useState } from 'react';
@@ -7,26 +7,28 @@ import { useContractWrite, usePrepareContractWrite } from 'wagmi';
 import { Alert } from '../../components/ui/Alert';
 import { Button } from '../../components/ui/Button';
 import { NumberInput } from '../../components/ui/NumberInput';
+import { TextInput } from '../../components/ui/TextInput';
 import { classNames } from '../../utils';
-import { etherWalletAddress } from './constants';
+import { decimals, myTokenAddress } from './constants';
 
-export interface WithdrawEtherProps {
+export interface TransferProps {
   onSuccess?: (data: unknown) => void;
 }
 
-export function WithdrawEther({ onSuccess }: WithdrawEtherProps) {
-  const [value, setValue] = useState('');
+export function Transfer({ onSuccess }: TransferProps) {
+  const [to, setTo] = useState('');
+  const [amount, setAmount] = useState('');
   const { config } = usePrepareContractWrite({
-    addressOrName: etherWalletAddress,
-    args: [value ? utils.parseEther(value) : constants.Zero],
-    contractInterface: etherWallet.abi,
-    functionName: 'withdraw',
+    addressOrName: myTokenAddress,
+    args: [to, amount ? utils.parseUnits(amount, decimals) : constants.Zero],
+    contractInterface: myToken.abi,
+    functionName: 'transfer',
   });
   const { isLoading, isSuccess, reset, write } = useContractWrite({
     ...config,
     onSuccess: (data) => {
       onSuccess?.(data);
-      setValue('');
+      setAmount('');
     },
   });
 
@@ -53,13 +55,22 @@ export function WithdrawEther({ onSuccess }: WithdrawEtherProps) {
       className="flex w-full max-w-md flex-col space-y-4"
       onSubmit={handleSubmit}
     >
+      <TextInput
+        disabled={isLoading || isSuccess}
+        id="to"
+        label="To address"
+        onChange={(event) => setTo(event.target.value)}
+        pattern="^0x[0-9a-fA-F]{40}$"
+        required
+        value={to}
+      />
       <NumberInput
         disabled={isLoading || isSuccess}
-        id="value"
-        label="Amount in ETH"
-        onChange={(event) => setValue(event.target.value)}
+        id="amount"
+        label="Amount of tokens to mint"
+        onChange={(event) => setAmount(event.target.value)}
         required
-        value={value}
+        value={amount}
       />
       <Button className={buttonClasses} disabled={isLoading} type="submit">
         {isSuccess ? 'Send new transaction' : 'Submit'}
