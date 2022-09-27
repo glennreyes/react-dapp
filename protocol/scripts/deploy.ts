@@ -26,6 +26,7 @@ async function main() {
   await myToken.deployed();
   console.info(`MyToken deployed to ${myToken.address}`);
 
+  // Write the contract addresses to a file
   await writeFile(
     'deployment.json',
     JSON.stringify(
