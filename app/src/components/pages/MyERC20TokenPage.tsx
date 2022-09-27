@@ -104,9 +104,6 @@ export function MyERC20TokenPage() {
         <PageNavigationLink direction="back" to="/ether-wallet">
           Exercise 3 — Deposit and Withdraw Ether
         </PageNavigationLink>
-        <PageNavigationLink to="/my-erc-721-nft">
-          Exercise 5 — Create an NFT
-        </PageNavigationLink>
       </PageNavigation>
     </>
   );

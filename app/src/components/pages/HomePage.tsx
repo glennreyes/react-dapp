@@ -38,9 +38,6 @@ export function HomePage() {
         <li>
           <Link to="/my-erc-20-token">Exercise 4 — Create an ERC-20 Token</Link>
         </li>
-        <li>
-          <Link to="/my-erc-721-nft">Exercise 5 — Create an NFT</Link>
-        </li>
       </ol>
       <h2>🍽 The tech stack</h2>
       <ul>

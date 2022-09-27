@@ -26,9 +26,6 @@ export function Menu() {
           4️⃣ — Create an ERC-20 Token
         </DrawerMenuLink>
       </DrawerMenuItem>
-      <DrawerMenuItem>
-        <DrawerMenuLink to="/my-erc-721-nft">5️⃣ — Create an NFT</DrawerMenuLink>
-      </DrawerMenuItem>
     </DrawerMenu>
   );
 }
