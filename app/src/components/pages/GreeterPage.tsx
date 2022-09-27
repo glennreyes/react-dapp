@@ -16,6 +16,8 @@ export function GreeterPage() {
     handleSendGreetingTransactionCompleted,
     isReadGreetingCompleted,
     isSendGreetingTransactionCompleted,
+    toggleReadGreetingCompleted,
+    toggleSendGreetingTransactionCompleted,
   } = useProgress();
 
   return (
@@ -121,7 +123,10 @@ console.info(\`Greeter deployed to \${greeter.address}\`);`}
         Check out <a href="https://wagmi.sh/docs">wagmi Docs</a> for further
         help on getting this implemented.
       </p>
-      <Window isCompleted={isReadGreetingCompleted}>
+      <Window
+        isCompleted={isReadGreetingCompleted}
+        onMarkComplete={toggleReadGreetingCompleted}
+      >
         <ReadGreetingData onSuccess={handleReadGreetingCompleted} />
       </Window>
       {isReadGreetingCompleted && (
@@ -145,7 +150,10 @@ console.info(\`Greeter deployed to \${greeter.address}\`);`}
             Check out <a href="https://wagmi.sh/docs">wagmi Docs</a> for further
             help on getting this implemented.
           </p>
-          <Window isCompleted={isSendGreetingTransactionCompleted}>
+          <Window
+            isCompleted={isSendGreetingTransactionCompleted}
+            onMarkComplete={toggleSendGreetingTransactionCompleted}
+          >
             <SendGreetingDataTransaction
               onSuccess={handleSendGreetingTransactionCompleted}
             />

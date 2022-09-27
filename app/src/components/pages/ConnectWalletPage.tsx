@@ -1,6 +1,6 @@
 import { useTitle } from 'react-use';
 
-import { BalanceDisplay } from '../../exercises/1-connect-wallet/BalanceDisplay';
+import { AccountBalance } from '../../exercises/1-connect-wallet/AccountBalance';
 import { ConnectWalletButton } from '../../exercises/1-connect-wallet/ConnectWalletButton';
 import { SwitchNetworkButton } from '../../exercises/1-connect-wallet/SwitchNetworkButton';
 import { useProgress } from '../app/Progress';
@@ -12,7 +12,13 @@ import { Window } from '../ui/Window';
 export function ConnectWalletPage() {
   useTitle('Connect Wallet | React Dapp');
 
-  const { isConnectWalletCompleted, isSwitchNetworkCompleted } = useProgress();
+  const {
+    handleAccountBalanceCompleted,
+    isAccountBalanceCompleted,
+    isConnectWalletCompleted,
+    isSwitchNetworkCompleted,
+    toggleAccountBalanceCompleted,
+  } = useProgress();
 
   return (
     <>
@@ -82,13 +88,19 @@ export function ConnectWalletPage() {
             <li>
               Go to{' '}
               <code>
-                /app/src/exercises/1-connect-wallet/BalanceDisplay.tsx
+                /app/src/exercises/1-connect-wallet/AccountBalance.tsx
               </code>{' '}
               and try to get this right.
             </li>
           </ol>
-          <Window>
-            <BalanceDisplay className="btn-lg btn" />
+          <Window
+            isCompleted={isAccountBalanceCompleted}
+            onMarkComplete={toggleAccountBalanceCompleted}
+          >
+            <AccountBalance
+              className="btn-lg btn"
+              onSuccess={handleAccountBalanceCompleted}
+            />
           </Window>
           <PageNavigation>
             <PageNavigationLink direction="back" to="/">

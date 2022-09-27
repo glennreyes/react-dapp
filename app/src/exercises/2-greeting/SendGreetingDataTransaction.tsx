@@ -58,7 +58,7 @@ export function SendGreetingDataTransaction({
         disabled={isLoading || isSuccess}
         id="greeting"
         label="Greeting"
-        minLength={4}
+        minLength={2}
         maxLength={56}
         onChange={(event) => setGreeting(event.target.value)}
         required

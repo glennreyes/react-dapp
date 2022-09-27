@@ -12,20 +12,20 @@ async function main() {
   // /**
   //  * ETHER WALLET
   //  */
-  // const EtherWallet = await ethers.getContractFactory('EtherWallet');
-  // const etherWallet = await EtherWallet.deploy();
-  // await etherWallet.deployed();
-  // console.info(`EtherWallet deployed to ${etherWallet.address}`);
+  const EtherWallet = await ethers.getContractFactory('EtherWallet');
+  const etherWallet = await EtherWallet.deploy();
+  await etherWallet.deployed();
+  console.info(`EtherWallet deployed to ${etherWallet.address}`);
 
   /**
    * MY ERC20 TOKEN
    */
-  const MyToken = await ethers.getContractFactory('MyToken');
-  const myToken = await MyToken.deploy('Glenn Token', 'GLN');
-  await myToken.deployed();
-  console.info(`MyToken deployed to ${myToken.address}`);
+  // const MyToken = await ethers.getContractFactory('MyToken');
+  // const myToken = await MyToken.deploy('Glenn Token', 'GLN');
+  // await myToken.deployed();
+  // console.info(`MyToken deployed to ${myToken.address}`);
 
-  console.info('Deployment completed! 🚀');
+  // console.info('Deployment completed! 🚀');
 }
 
 (async () => {

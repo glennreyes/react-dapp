@@ -19,6 +19,9 @@ export function EtherWalletPage() {
     isDepositCompleted,
     isGetBalanceCompleted,
     isWithdrawCompleted,
+    toggleDepositCompleted,
+    toggleGetBalanceCompleted,
+    toggleWithdrawCompleted,
   } = useProgress();
 
   return (
@@ -62,7 +65,10 @@ contract EtherWallet {
         Deposit some Ether to the contract by sending a transaction and passing
         the value.
       </p>
-      <Window>
+      <Window
+        isCompleted={isDepositCompleted}
+        onMarkComplete={toggleDepositCompleted}
+      >
         <DepositEther onSuccess={handleDepositCompleted} />
       </Window>
       {isDepositCompleted && (
@@ -72,7 +78,10 @@ contract EtherWallet {
             Check the balance of the contract by calling the{' '}
             <code>getBalance</code> function.
           </p>
-          <Window>
+          <Window
+            isCompleted={isGetBalanceCompleted}
+            onMarkComplete={toggleGetBalanceCompleted}
+          >
             <GetBalance onSuccess={handleGetBalanceCompleted} />
           </Window>
         </>
@@ -84,7 +93,10 @@ contract EtherWallet {
             Withdraw some Ether from the contract by sending a transaction with
             the amount you want to withdraw.
           </p>
-          <Window>
+          <Window
+            isCompleted={isWithdrawCompleted}
+            onMarkComplete={toggleWithdrawCompleted}
+          >
             <WithdrawEther onSuccess={handleWithdrawCompleted} />
           </Window>
         </>

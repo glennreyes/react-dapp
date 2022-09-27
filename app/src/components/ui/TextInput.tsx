@@ -3,7 +3,7 @@ import type { ComponentProps } from 'react';
 import { classNames } from '../../utils';
 import { InputLabel } from './InputLabel';
 
-interface TextInputProps extends ComponentProps<'input'> {
+export interface TextInputProps extends ComponentProps<'input'> {
   description?: string;
   id: string;
   label: string;

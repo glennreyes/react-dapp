@@ -1,1 +1,1 @@
-export const etherWalletAddress = '0x9A9f2CCfdE556A7E9Ff0848998Aa4a0CFD8863AE';
+export const etherWalletAddress = '0x610178dA211FEF7D417bC0e6FeD39F05609AD788';

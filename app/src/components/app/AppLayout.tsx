@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 
-import { BalanceDisplay } from '../../exercises/1-connect-wallet/BalanceDisplay';
+import { AccountBalance } from '../../exercises/1-connect-wallet/AccountBalance';
 import { ConnectWalletButton } from '../../exercises/1-connect-wallet/ConnectWalletButton';
 import { SwitchNetworkButton } from '../../exercises/1-connect-wallet/SwitchNetworkButton';
 import { Drawer } from '../drawer/Drawer';
@@ -11,23 +11,20 @@ import { Footer } from '../layout/Footer';
 import { Main } from '../layout/Main';
 import { Navbar } from '../layout/Navbar';
 import { Menu } from './Menu';
-import { Progress } from './Progress';
 
 export function AppLayout() {
   return (
     <Drawer menu={<Menu />}>
       <Navbar title="React Dapp">
         <SwitchNetworkButton />
-        <BalanceDisplay />
+        <AccountBalance />
         <ConnectWalletButton />
         <DrawerButton>Open Drawer</DrawerButton>
       </Navbar>
       <Main>
         <Container>
           <Article>
-            <Progress>
-              <Outlet />
-            </Progress>
+            <Outlet />
           </Article>
         </Container>
       </Main>

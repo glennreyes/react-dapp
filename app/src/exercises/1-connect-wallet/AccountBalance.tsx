@@ -4,11 +4,17 @@ import { useAccount, useBalance } from 'wagmi';
 import { NumberDisplay } from '../../components/ui/NumberDisplay';
 import { classNames } from '../../utils';
 
-type BalanceDisplayProps = ComponentProps<'p'>;
+export interface AccountBalanceProps extends ComponentProps<'p'> {
+  onSuccess?: (data: unknown) => void;
+}
 
-export function BalanceDisplay({ className, ...props }: BalanceDisplayProps) {
+export function AccountBalance({
+  className,
+  onSuccess,
+  ...props
+}: AccountBalanceProps) {
   const { address } = useAccount();
-  const { data } = useBalance({ addressOrName: address });
+  const { data } = useBalance({ addressOrName: address, onSuccess });
 
   const textClasses = classNames(
     'btn btn-ghost btn-disabled text-base-content no-animation normal-case gap-2',

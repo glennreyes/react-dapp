@@ -4,10 +4,10 @@ import type { FormEvent } from 'react';
 import { useCallback, useState } from 'react';
 import { useContractWrite, usePrepareContractWrite } from 'wagmi';
 
+import { AddressInput } from '../../components/ui/AddressInput';
 import { Alert } from '../../components/ui/Alert';
 import { Button } from '../../components/ui/Button';
 import { NumberInput } from '../../components/ui/NumberInput';
-import { TextInput } from '../../components/ui/TextInput';
 import { classNames } from '../../utils';
 import { decimals, myTokenAddress } from './constants';
 
@@ -55,19 +55,18 @@ export function Transfer({ onSuccess }: TransferProps) {
       className="flex w-full max-w-md flex-col space-y-4"
       onSubmit={handleSubmit}
     >
-      <TextInput
+      <AddressInput
         disabled={isLoading || isSuccess}
         id="to"
         label="To address"
         onChange={(event) => setTo(event.target.value)}
-        pattern="^0x[0-9a-fA-F]{40}$"
         required
         value={to}
       />
       <NumberInput
         disabled={isLoading || isSuccess}
         id="amount"
-        label="Amount of tokens to mint"
+        label="Amount"
         onChange={(event) => setAmount(event.target.value)}
         required
         value={amount}
