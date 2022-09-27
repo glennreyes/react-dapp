@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  @apply bg-base-100 antialiased;
+  @apply bg-base-100 scroll-smooth antialiased;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -11,5 +11,5 @@
 }
 
 #root {
-  @apply min-h-screen min-w-[320px];
+  @apply min-w-[320px];
 }
