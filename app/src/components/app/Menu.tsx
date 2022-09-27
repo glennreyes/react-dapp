@@ -22,12 +22,12 @@ export function Menu() {
         </DrawerMenuLink>
       </DrawerMenuItem>
       <DrawerMenuItem>
-        <DrawerMenuLink to="/erc-20-token">
+        <DrawerMenuLink to="/my-erc-20-token">
           4️⃣ — Create an ERC-20 Token
         </DrawerMenuLink>
       </DrawerMenuItem>
       <DrawerMenuItem>
-        <DrawerMenuLink to="/erc-721-nft">5️⃣ — Create an NFT</DrawerMenuLink>
+        <DrawerMenuLink to="/my-erc-721-nft">5️⃣ — Create an NFT</DrawerMenuLink>
       </DrawerMenuItem>
     </DrawerMenu>
   );

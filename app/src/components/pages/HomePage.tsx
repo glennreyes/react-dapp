@@ -36,10 +36,10 @@ export function HomePage() {
           </Link>
         </li>
         <li>
-          <Link to="/erc-20-token">Exercise 4 — Create an ERC-20 Token</Link>
+          <Link to="/my-erc-20-token">Exercise 4 — Create an ERC-20 Token</Link>
         </li>
         <li>
-          <Link to="/erc-721-nft">Exercise 5 — Create an NFT</Link>
+          <Link to="/my-erc-721-nft">Exercise 5 — Create an NFT</Link>
         </li>
       </ol>
       <h2>🍽 The tech stack</h2>

@@ -1,1 +1,1 @@
-export const greeterAddress = '0xe7f1725e7734ce288f8367e1bb143e90bb3f0512';
+export const greeterAddress = '0x959922bE3CAee4b8Cd9a407cc3ac1C251C2007B1';

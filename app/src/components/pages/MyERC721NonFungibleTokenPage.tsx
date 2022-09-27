@@ -4,7 +4,7 @@ import { PageNavigation } from '../page-navigation/PageNavigation';
 import { PageNavigationLink } from '../page-navigation/PageNavigationLink';
 import { Subheading } from '../ui/SubHeading';
 
-export function ERC721NonFungibleTokenPage() {
+export function MyERC721NonFungibleTokenPage() {
   useTitle('ERC-721 NFT | React Dapp');
 
   return (
@@ -21,7 +21,7 @@ export function ERC721NonFungibleTokenPage() {
       <h2>Task 1 — Mint some NFT</h2>
       <h2>Task 1 — Mint some NFT</h2>
       <PageNavigation>
-        <PageNavigationLink direction="back" to="/erc-20-token">
+        <PageNavigationLink direction="back" to="/my-erc-20-token">
           Exercise 4 — Create an ERC-20 Token
         </PageNavigationLink>
       </PageNavigation>

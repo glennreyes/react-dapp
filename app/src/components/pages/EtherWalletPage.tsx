@@ -80,7 +80,7 @@ contract EtherWallet {
         <PageNavigationLink direction="back" to="/greeter">
           Exercise 2 — Deposit and Withdraw Ether
         </PageNavigationLink>
-        <PageNavigationLink to="/erc-20-token">
+        <PageNavigationLink to="/my-erc-20-token">
           Exercise 4 — Create an ERC-20 token
         </PageNavigationLink>
       </PageNavigation>

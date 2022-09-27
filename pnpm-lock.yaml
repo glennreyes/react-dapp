@@ -78,16 +78,19 @@ importers:
       '@ethersproject/abi': ^5.7.0
       '@ethersproject/providers': ^5.7.1
       '@nomicfoundation/hardhat-toolbox': ^2.0.0
+      '@openzeppelin/contracts': ^4.7.3
       eslint: ^8.24.0
       eslint-config-banana: ^1.0.0
       ethers: ^5.7.1
       hardhat: ^2.11.2
+    dependencies:
+      '@openzeppelin/contracts': 4.7.3
     devDependencies:
       '@ethersproject/abi': 5.7.0
       '@ethersproject/providers': 5.7.1
-      '@nomicfoundation/hardhat-toolbox': 2.0.0_ejxurwfrdte2m4fkmgmjzssr6m
+      '@nomicfoundation/hardhat-toolbox': 2.0.0_4d6wq5b7asxlkxvstyalkcy24m
       eslint: 8.24.0
-      eslint-config-banana: 1.0.0_xugroqrm4fmuxy4wgysjgjt2my
+      eslint-config-banana: 1.0.0_t5rwfwyi7tt4tdg3tsepi3gfhi
       ethers: 5.7.1
       hardhat: 2.11.2_qv3zdqwr5cvvfboiktsp7a3dfa
 
@@ -2396,7 +2399,7 @@ packages:
       hardhat: 2.11.2_qv3zdqwr5cvvfboiktsp7a3dfa
     dev: true
 
-  /@nomicfoundation/hardhat-toolbox/2.0.0_ejxurwfrdte2m4fkmgmjzssr6m:
+  /@nomicfoundation/hardhat-toolbox/2.0.0_4d6wq5b7asxlkxvstyalkcy24m:
     resolution: {integrity: sha512-BoOPbzLQ1GArnBZd4Jz4IU8FY3RY4nUwpXlfymXwxlXNimngkPRJj7ivVNurD7igohEjf90v/Axn2M5WwAdCJQ==}
     peerDependencies:
       '@ethersproject/abi': ^5.4.7
@@ -2429,13 +2432,13 @@ packages:
       '@typechain/hardhat': 6.1.3_hdc77mquumuyu4r5wip4q5ohha
       '@types/chai': 4.3.3
       '@types/mocha': 9.1.1
-      '@types/node': 18.7.21
+      '@types/node': 18.7.23
       chai: 4.3.6
       ethers: 5.7.1
       hardhat: 2.11.2_qv3zdqwr5cvvfboiktsp7a3dfa
       hardhat-gas-reporter: 1.0.9_hardhat@2.11.2
       solidity-coverage: 0.8.2_hardhat@2.11.2
-      ts-node: 10.9.1_ke6ijd35va4xbeayrnhu4zwagm
+      ts-node: 10.9.1_i7crlymf22c7hnawxb4tbubvdq
       typechain: 8.1.0_typescript@4.8.3
       typescript: 4.8.3
     dev: true
@@ -2575,6 +2578,10 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /@openzeppelin/contracts/4.7.3:
+    resolution: {integrity: sha512-dGRS0agJzu8ybo44pCIf3xBaPQN/65AIXNgK8+4gzKd5kbvlqyxryUYVLJv7fK98Seyd2hDZzVEHSWAh0Bt1Yw==}
+    dev: false
 
   /@peculiar/asn1-schema/2.3.0:
     resolution: {integrity: sha512-DtNLAG4vmDrdSJFPe7rypkcj597chNQL7u+2dBtYo5mh7VW2+im6ke+O0NVr8W1f4re4C3F71LhoMb0Yxqa48Q==}
@@ -3144,7 +3151,7 @@ packages:
   /@types/concat-stream/1.6.1:
     resolution: {integrity: sha512-eHE4cQPoj6ngxBZMvVf6Hw7Mh4jMW4U9lpGmS5GBPB9RYxlFg+CHaVN7ErNY4W9XfLIEn20b4VDYaIrbq0q4uA==}
     dependencies:
-      '@types/node': 18.7.21
+      '@types/node': 18.7.23
     dev: true
 
   /@types/connect/3.4.35:
@@ -3156,14 +3163,14 @@ packages:
   /@types/form-data/0.0.33:
     resolution: {integrity: sha512-8BSvG1kGm83cyJITQMZSulnl6QV8jqAGreJsc5tPu1Jq0vTSOiY/k24Wx82JRpWwZSqrala6sd5rWi6aNXvqcw==}
     dependencies:
-      '@types/node': 18.7.21
+      '@types/node': 18.7.23
     dev: true
 
   /@types/glob/7.2.0:
     resolution: {integrity: sha512-ZUxbzKl0IfJILTS6t7ip5fQQM/J3TJYubDm3nMbgubNNYS62eXeUpoLUC8/7fJNiFYHTrGPQn7hspDUzIHX3UA==}
     dependencies:
       '@types/minimatch': 5.1.2
-      '@types/node': 18.7.21
+      '@types/node': 18.7.23
     dev: true
 
   /@types/istanbul-lib-coverage/2.0.4:
@@ -5821,38 +5828,6 @@ packages:
       - utf-8-validate
     dev: true
 
-  /eslint-config-banana/1.0.0_xugroqrm4fmuxy4wgysjgjt2my:
-    resolution: {integrity: sha512-g4lx0oPd1Q7TFEVfb5CEl5zDlw9CY4Ao0NWjfkgpustUvpSoKKnBOCZKBbuSSaHTIRJVF9SWc8LgeRbUa+NVPA==}
-    dependencies:
-      '@graphql-eslint/eslint-plugin': 3.10.7_nl2dk5wnjvclmjc4d6stqvxoce
-      '@react-native-community/eslint-config': 3.1.0_74tmx3xfwnzfyvkbm54evvlqsm
-      '@typescript-eslint/eslint-plugin': 5.38.0_4gkcvl6qsi23tqqawfqgcwtp54
-      '@typescript-eslint/parser': 5.38.0_7ilbxdl5iguzcjriqqcg2m5cku
-      eslint-config-prettier: 8.5.0_eslint@8.24.0
-      eslint-plugin-jsx-a11y: 6.6.1_eslint@8.24.0
-      eslint-plugin-react: 7.31.8_eslint@8.24.0
-      eslint-plugin-react-hooks: 4.6.0_eslint@8.24.0
-      eslint-plugin-security: 1.5.0
-      eslint-plugin-simple-import-sort: 7.0.0_eslint@8.24.0
-      eslint-plugin-sort-keys-fix: 1.1.2
-      eslint-plugin-tailwindcss: 3.6.2_ts-node@10.9.1
-      eslint-plugin-unused-imports: 2.0.0_ze6yafustt64q2tz5s7cyk2s3m
-    transitivePeerDependencies:
-      - '@swc/core'
-      - '@swc/wasm'
-      - '@types/node'
-      - bufferutil
-      - encoding
-      - eslint
-      - graphql
-      - jest
-      - prettier
-      - supports-color
-      - ts-node
-      - typescript
-      - utf-8-validate
-    dev: true
-
   /eslint-config-prettier/8.5.0_eslint@8.24.0:
     resolution: {integrity: sha512-obmWKLUNCnhtQRKc+tmnYuQl0pFU1ibYJQ5BGhTVB08bHe9wC8qUeG7c08dj9XX+AuPj1YSGSQIHl1pnDHZR0Q==}
     hasBin: true
@@ -6730,6 +6705,19 @@ packages:
     peerDependenciesMeta:
       debug:
         optional: true
+    dev: false
+
+  /follow-redirects/1.15.2_debug@4.3.4:
+    resolution: {integrity: sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==}
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
+    dependencies:
+      debug: 4.3.4
+    dev: true
 
   /for-each/0.3.3:
     resolution: {integrity: sha512-jqYfLp7mo9vIyQf8ykW2v7A+2N4QjeCeI5+Dz9XraiO1ign81wjiH7Fb9vSOWvQfNtmSa4H2RoQTrrXivdUZmw==}
@@ -7253,7 +7241,7 @@ packages:
       solc: 0.7.3_debug@4.3.4
       source-map-support: 0.5.21
       stacktrace-parser: 0.1.10
-      ts-node: 10.9.1_ke6ijd35va4xbeayrnhu4zwagm
+      ts-node: 10.9.1_i7crlymf22c7hnawxb4tbubvdq
       tsort: 0.0.1
       typescript: 4.8.3
       undici: 5.10.0
@@ -10797,7 +10785,7 @@ packages:
     dependencies:
       command-exists: 1.2.9
       commander: 3.0.2
-      follow-redirects: 1.15.2
+      follow-redirects: 1.15.2_debug@4.3.4
       fs-extra: 0.30.0
       js-sha3: 0.8.0
       memorystream: 0.3.1

@@ -4,7 +4,7 @@ import { PageNavigation } from '../page-navigation/PageNavigation';
 import { PageNavigationLink } from '../page-navigation/PageNavigationLink';
 import { Subheading } from '../ui/SubHeading';
 
-export function ERC20TokenPage() {
+export function MyERC20TokenPage() {
   useTitle('ERC-20 Token | React Dapp');
 
   return (
@@ -22,11 +22,7 @@ export function ERC20TokenPage() {
       <h2>Task 2 — Transfer some token</h2>
       <h2>Task 3 — Burn some token</h2>
       <h2>Task 4 — Transfer from another address</h2>
-      <h2>⭐️ Bonus Task — Use ERC-20 from OpenZeppelin</h2>
-      <p>
-        Replace our custom ERC20 contract with the OpenZeppelin ERC-20 token
-        standard implementation.
-      </p>
+      <h2>⭐️ Bonus Task — tbd</h2>
       <p>
         Check out:{' '}
         <ul>
@@ -45,7 +41,7 @@ export function ERC20TokenPage() {
         <PageNavigationLink direction="back" to="/ether-wallet">
           Exercise 3 — Deposit and Withdraw Ether
         </PageNavigationLink>
-        <PageNavigationLink to="/erc-721-nft">
+        <PageNavigationLink to="/my-erc-721-nft">
           Exercise 5 — Create an NFT
         </PageNavigationLink>
       </PageNavigation>
