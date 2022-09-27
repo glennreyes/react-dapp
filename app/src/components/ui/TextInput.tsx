@@ -1,6 +1,7 @@
 import type { ComponentProps } from 'react';
 
 import { classNames } from '../../utils';
+import { InputLabel } from './InputLabel';
 
 interface TextInputProps extends ComponentProps<'input'> {
   id: string;
@@ -11,10 +12,7 @@ export function TextInput({ className, id, label, ...props }: TextInputProps) {
   const classes = classNames('input input-lg input-bordered w-full', className);
 
   return (
-    <div>
-      <label htmlFor={id} className="label">
-        <span className="label-text">{label}</span>
-      </label>
+    <InputLabel id={id} label={label}>
       <input
         id={id}
         className={classes}
@@ -22,6 +20,6 @@ export function TextInput({ className, id, label, ...props }: TextInputProps) {
         type="text"
         {...props}
       />
-    </div>
+    </InputLabel>
   );
 }

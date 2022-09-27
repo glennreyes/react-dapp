@@ -7,7 +7,7 @@ import { Alert } from '../../components/ui/Alert';
 import { Button } from '../../components/ui/Button';
 import { TextInput } from '../../components/ui/TextInput';
 import { classNames } from '../../utils';
-import { contractAddress } from './constants';
+import { greeterAddress } from './constants';
 
 export interface SendGreetingDataTransactionProps {
   onSuccess?: (data: unknown) => void;
@@ -18,7 +18,7 @@ export function SendGreetingDataTransaction({
 }: SendGreetingDataTransactionProps) {
   const [greeting, setGreeting] = useState('');
   const { config } = usePrepareContractWrite({
-    addressOrName: contractAddress,
+    addressOrName: greeterAddress,
     args: [greeting],
     contractInterface: greeter.abi,
     functionName: 'setGreeting',
@@ -58,7 +58,10 @@ export function SendGreetingDataTransaction({
         disabled={isLoading || isSuccess}
         id="greeting"
         label="Greeting"
+        minLength={4}
+        maxLength={56}
         onChange={(event) => setGreeting(event.target.value)}
+        required
         value={greeting}
       />
       <Button className={buttonClasses} disabled={isLoading} type="submit">

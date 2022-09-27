@@ -5,7 +5,8 @@ import { useContractRead } from 'wagmi';
 import { Button } from '../../components/ui/Button';
 import { Icon } from '../../components/ui/Icon';
 import { Loading } from '../../components/ui/Loading';
-import { contractAddress } from './constants';
+import { Stat } from '../../components/ui/Stat';
+import { greeterAddress } from './constants';
 
 export interface ReadGreetingDataProps {
   onSuccess?: (data: unknown) => void;
@@ -13,7 +14,7 @@ export interface ReadGreetingDataProps {
 
 export function ReadGreetingData({ onSuccess }: ReadGreetingDataProps) {
   const { data, isError, isLoading, refetch } = useContractRead({
-    addressOrName: contractAddress,
+    addressOrName: greeterAddress,
     contractInterface: greeter.abi,
     functionName: 'greet',
     onSuccess,
@@ -29,7 +30,7 @@ export function ReadGreetingData({ onSuccess }: ReadGreetingDataProps) {
 
   return (
     <>
-      <h3>{data}</h3>
+      {typeof data === 'string' && <Stat title="Greeting">{data}</Stat>}
       <Button className="gap-3" onClick={() => refetch()}>
         <Icon icon={ArrowPathIcon} />
         Refetch

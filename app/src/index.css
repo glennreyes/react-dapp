@@ -2,14 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  @apply bg-base-100 scroll-smooth antialiased;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
+@layer base {
+  :root {
+    @apply bg-base-100 scroll-smooth antialiased;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+  }
 
-#root {
-  @apply min-w-[320px];
+  #root {
+    @apply min-w-[320px];
+  }
+
+  /* Hide input number controls */
+  /* https://github.com/tailwindlabs/tailwindcss/issues/1101#issuecomment-525296131 */
+  [type='number']::-webkit-inner-spin-button,
+  [type='number']::-webkit-outer-spin-button {
+    @apply m-0 appearance-none;
+  }
 }
