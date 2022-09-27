@@ -1,4 +1,5 @@
 import myToken from '@react-dapp/protocol/artifacts/contracts/MyToken.sol/MyToken.json';
+import deployment from '@react-dapp/protocol/deployment.json';
 import { BigNumber } from 'ethers';
 import type { FormEvent } from 'react';
 import { useCallback, useState } from 'react';
@@ -8,7 +9,6 @@ import { Alert } from '../../components/ui/Alert';
 import { Button } from '../../components/ui/Button';
 import { NumberInput } from '../../components/ui/NumberInput';
 import { classNames } from '../../utils';
-import { myTokenAddress } from './constants';
 
 export interface BurnProps {
   onSuccess?: (data: unknown) => void;
@@ -17,7 +17,7 @@ export interface BurnProps {
 export function Burn({ onSuccess }: BurnProps) {
   const [amount, setAmount] = useState('');
   const { config } = usePrepareContractWrite({
-    addressOrName: myTokenAddress,
+    addressOrName: deployment.myToken.address,
     args: [amount ? BigNumber.from(amount) : undefined],
     contractInterface: myToken.abi,
     functionName: 'burn',

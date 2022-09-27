@@ -1,4 +1,5 @@
 import myToken from '@react-dapp/protocol/artifacts/contracts/MyToken.sol/MyToken.json';
+import deployment from '@react-dapp/protocol/deployment.json';
 import { constants, utils } from 'ethers';
 import type { FormEvent } from 'react';
 import { useCallback, useState } from 'react';
@@ -9,7 +10,6 @@ import { Alert } from '../../components/ui/Alert';
 import { Button } from '../../components/ui/Button';
 import { NumberInput } from '../../components/ui/NumberInput';
 import { classNames } from '../../utils';
-import { decimals, myTokenAddress } from './constants';
 
 export interface TransferProps {
   onSuccess?: (data: unknown) => void;
@@ -19,8 +19,8 @@ export function Transfer({ onSuccess }: TransferProps) {
   const [to, setTo] = useState('');
   const [amount, setAmount] = useState('');
   const { config } = usePrepareContractWrite({
-    addressOrName: myTokenAddress,
-    args: [to, amount ? utils.parseUnits(amount, decimals) : constants.Zero],
+    addressOrName: deployment.myToken.address,
+    args: [to, amount ? utils.parseUnits(amount, 18) : constants.Zero],
     contractInterface: myToken.abi,
     functionName: 'transfer',
   });

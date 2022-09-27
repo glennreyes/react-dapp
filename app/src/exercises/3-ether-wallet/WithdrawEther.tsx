@@ -1,4 +1,5 @@
 import etherWallet from '@react-dapp/protocol/artifacts/contracts/EtherWallet.sol/EtherWallet.json';
+import deployment from '@react-dapp/protocol/deployment.json';
 import { constants, utils } from 'ethers';
 import type { FormEvent } from 'react';
 import { useCallback, useState } from 'react';
@@ -8,7 +9,6 @@ import { Alert } from '../../components/ui/Alert';
 import { Button } from '../../components/ui/Button';
 import { NumberInput } from '../../components/ui/NumberInput';
 import { classNames } from '../../utils';
-import { etherWalletAddress } from './constants';
 
 export interface WithdrawEtherProps {
   onSuccess?: (data: unknown) => void;
@@ -17,7 +17,7 @@ export interface WithdrawEtherProps {
 export function WithdrawEther({ onSuccess }: WithdrawEtherProps) {
   const [value, setValue] = useState('');
   const { config } = usePrepareContractWrite({
-    addressOrName: etherWalletAddress,
+    addressOrName: deployment.etherWallet.address,
     args: [value ? utils.parseEther(value) : constants.Zero],
     contractInterface: etherWallet.abi,
     functionName: 'withdraw',

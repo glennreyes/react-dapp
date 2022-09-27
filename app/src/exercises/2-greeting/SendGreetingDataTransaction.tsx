@@ -1,4 +1,5 @@
 import greeter from '@react-dapp/protocol/artifacts/contracts/Greeter.sol/Greeter.json';
+import deployment from '@react-dapp/protocol/deployment.json';
 import type { FormEvent } from 'react';
 import { useCallback, useState } from 'react';
 import { useContractWrite, usePrepareContractWrite } from 'wagmi';
@@ -7,7 +8,6 @@ import { Alert } from '../../components/ui/Alert';
 import { Button } from '../../components/ui/Button';
 import { TextInput } from '../../components/ui/TextInput';
 import { classNames } from '../../utils';
-import { greeterAddress } from './constants';
 
 export interface SendGreetingDataTransactionProps {
   onSuccess?: (data: unknown) => void;
@@ -18,7 +18,7 @@ export function SendGreetingDataTransaction({
 }: SendGreetingDataTransactionProps) {
   const [greeting, setGreeting] = useState('');
   const { config } = usePrepareContractWrite({
-    addressOrName: greeterAddress,
+    addressOrName: deployment.greeter.address,
     args: [greeting],
     contractInterface: greeter.abi,
     functionName: 'setGreeting',

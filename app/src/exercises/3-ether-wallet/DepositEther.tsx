@@ -1,3 +1,4 @@
+import deployment from '@react-dapp/protocol/deployment.json';
 import { utils } from 'ethers';
 import type { FormEvent } from 'react';
 import { useCallback, useState } from 'react';
@@ -7,7 +8,6 @@ import { Alert } from '../../components/ui/Alert';
 import { Button } from '../../components/ui/Button';
 import { NumberInput } from '../../components/ui/NumberInput';
 import { classNames } from '../../utils';
-import { etherWalletAddress } from './constants';
 
 export interface DepositEtherProps {
   onSuccess?: (data: unknown) => void;
@@ -17,7 +17,7 @@ export function DepositEther({ onSuccess }: DepositEtherProps) {
   const [value, setValue] = useState('');
   const { config } = usePrepareSendTransaction({
     request: {
-      to: etherWalletAddress,
+      to: deployment.etherWallet.address,
       value: value ? utils.parseEther(value) : undefined,
     },
   });

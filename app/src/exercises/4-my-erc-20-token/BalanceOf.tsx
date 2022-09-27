@@ -1,5 +1,6 @@
 import { ArrowPathIcon } from '@heroicons/react/24/solid';
 import myToken from '@react-dapp/protocol/artifacts/contracts/MyToken.sol/MyToken.json';
+import deployment from '@react-dapp/protocol/deployment.json';
 import { BigNumber } from 'ethers';
 import { useState } from 'react';
 import { useContractRead } from 'wagmi';
@@ -10,7 +11,6 @@ import { Button } from '../../components/ui/Button';
 import { Icon } from '../../components/ui/Icon';
 import { Loading } from '../../components/ui/Loading';
 import { Stat } from '../../components/ui/Stat';
-import { myTokenAddress } from './constants';
 
 export interface BalanceOfProps {
   onSuccess?: (data: unknown) => void;
@@ -19,7 +19,7 @@ export interface BalanceOfProps {
 export function BalanceOf({ onSuccess }: BalanceOfProps) {
   const [account, setAccount] = useState('');
   const { data, isLoading, refetch } = useContractRead({
-    addressOrName: myTokenAddress,
+    addressOrName: deployment.myToken.address,
     args: [account],
     contractInterface: myToken.abi,
     enabled: /^0x[0-9a-fA-F]{40}$/.test(account),
@@ -31,7 +31,7 @@ export function BalanceOf({ onSuccess }: BalanceOfProps) {
     : undefined;
 
   const symbolResult = useContractRead({
-    addressOrName: myTokenAddress,
+    addressOrName: deployment.myToken.address,
     contractInterface: myToken.abi,
     functionName: 'symbol',
     onSuccess,

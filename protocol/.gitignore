@@ -9,5 +9,8 @@ typechain-types
 cache
 artifacts
 
+# Deployed contracts
+deployment.json
+
 # ESLint cache
 .eslintcache

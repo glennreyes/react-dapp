@@ -1,5 +1,6 @@
 import { ArrowPathIcon } from '@heroicons/react/24/solid';
 import etherWallet from '@react-dapp/protocol/artifacts/contracts/EtherWallet.sol/EtherWallet.json';
+import deployment from '@react-dapp/protocol/deployment.json';
 import { BigNumber } from 'ethers';
 import { useContractRead } from 'wagmi';
 
@@ -8,7 +9,6 @@ import { Button } from '../../components/ui/Button';
 import { Icon } from '../../components/ui/Icon';
 import { Loading } from '../../components/ui/Loading';
 import { Stat } from '../../components/ui/Stat';
-import { etherWalletAddress } from './constants';
 
 export interface GetBalanceProps {
   onSuccess?: (data: unknown) => void;
@@ -16,7 +16,7 @@ export interface GetBalanceProps {
 
 export function GetBalance({ onSuccess }: GetBalanceProps) {
   const { data, isError, isLoading, refetch } = useContractRead({
-    addressOrName: etherWalletAddress,
+    addressOrName: deployment.etherWallet.address,
     contractInterface: etherWallet.abi,
     functionName: 'getBalance',
     onSuccess,
