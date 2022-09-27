@@ -18,7 +18,7 @@ export function DepositEther({ onSuccess }: DepositEtherProps) {
   const { config } = usePrepareSendTransaction({
     request: {
       to: etherWalletAddress,
-      value: utils.parseUnits(value || '0', 'ether'),
+      value: value ? utils.parseEther(value) : undefined,
     },
   });
   const { isLoading, isSuccess, reset, sendTransaction } = useSendTransaction({

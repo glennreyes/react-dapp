@@ -5,6 +5,7 @@ import { classNames } from '../../utils';
 import { InputLabel } from './InputLabel';
 
 interface NumberInputProps extends NumericFormatProps {
+  description?: string;
   id: string;
   label: string;
 }
