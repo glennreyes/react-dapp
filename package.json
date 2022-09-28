@@ -22,7 +22,7 @@
     "prettier": "^2.7.1",
     "prettier-plugin-solidity": "1.0.0-beta.24",
     "prettier-plugin-tailwindcss": "^0.1.13",
-    "turbo": "^1.5.3"
+    "turbo": "^1.5.4"
   },
   "prettier": {
     "plugins": [

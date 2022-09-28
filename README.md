@@ -32,4 +32,6 @@ Creating the workshop materials wouldn't have been possible without:
 - https://ethereum.org/en/learn
 - https://solidity-by-example.org/
 - https://docs.metamask.io/guide/ethereum-provider.html
+- https://github.com/scaffold-eth/scaffold-eth
+- https://eth.build
 - https://github.com/dabit3/full-stack-ethereum-workshop
