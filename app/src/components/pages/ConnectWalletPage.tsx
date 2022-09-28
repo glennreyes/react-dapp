@@ -1,8 +1,8 @@
 import { useTitle } from 'react-use';
 
 import { AccountBalance } from '../../exercises/1-connect-wallet/AccountBalance';
-import { ConnectWalletButton } from '../../exercises/1-connect-wallet/ConnectWalletButton';
-import { SwitchNetworkButton } from '../../exercises/1-connect-wallet/SwitchNetworkButton';
+import { ConnectWallet } from '../../exercises/1-connect-wallet/ConnectWallet';
+import { SwitchNetwork } from '../../exercises/1-connect-wallet/SwitchNetwork';
 import { useProgress } from '../app/Progress';
 import { PageNavigation } from '../page-navigation/PageNavigation';
 import { PageNavigationLink } from '../page-navigation/PageNavigationLink';
@@ -37,22 +37,20 @@ export function ConnectWalletPage() {
         implement the logic of our Dapp. The first thing we need to do is
         connect the wallet.
       </p>
-      <h2>Task 1 — Connect Wallet</h2>
+      <h2>Task 1 — 👝 Connect Wallet</h2>
       <ol>
         <li>
           To get started, check out{' '}
-          <code>
-            /app/src/exercises/1-connect-wallet/ConnectWalletButton.tsx
-          </code>{' '}
-          to solve the missing pieces.
+          <code>/app/src/exercises/1-connect-wallet/ConnectWallet.tsx</code> to
+          solve the missing pieces.
         </li>
       </ol>
       <Window isCompleted={isConnectWalletCompleted}>
-        <ConnectWalletButton className="btn-lg btn" />
+        <ConnectWallet className="btn-lg btn" />
       </Window>
       {isConnectWalletCompleted && (
         <>
-          <h2>Task 2 — Switch Network</h2>
+          <h2>Task 2 — 🔁 Switch Network</h2>
           <p>
             We will be using the Hardhat network on localhost. In this step we
             want to make sure that the wallet uses the selected network.
@@ -66,9 +64,7 @@ export function ConnectWalletPage() {
           <ol>
             <li>
               Head to{' '}
-              <code>
-                /app/src/exercises/1-connect-wallet/SwitchNetworkButton.tsx
-              </code>{' '}
+              <code>/app/src/exercises/1-connect-wallet/SwitchNetwork.tsx</code>{' '}
               and try to get this right.
             </li>
           </ol>
@@ -77,13 +73,13 @@ export function ConnectWalletPage() {
             different network in MetaMask and see what happens in the app.
           </blockquote>
           <Window isCompleted={isSwitchNetworkCompleted}>
-            <SwitchNetworkButton className="btn-lg btn" />
+            <SwitchNetwork className="btn-lg btn" />
           </Window>
         </>
       )}
       {isSwitchNetworkCompleted && (
         <>
-          <h2>⭐️ Bonus Task — Display Balance</h2>
+          <h2>⭐️ Bonus Task — 💰 Display Balance</h2>
           <ol>
             <li>
               Go to{' '}

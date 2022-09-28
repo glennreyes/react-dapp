@@ -57,7 +57,7 @@ contract Greeter {
 `}
         </code>
       </pre>
-      <h2>Task 1 — Compile, test and deploy the smart contract</h2>
+      <h2>Task 1 — ⚙️ Compile, test and deploy the smart contract</h2>
       <ol>
         <li>
           Next, compile the code by running <code>pnpm compile</code>. This
@@ -97,7 +97,7 @@ console.info(\`Greeter deployed to \${greeter.address}\`);`}
           </pre>
         </li>
       </ol>
-      <h2>Task 2 — Reading smart contract data</h2>
+      <h2>Task 2 — 📖 Reading smart contract data</h2>
       <p>
         In this task we are going to implement the <code>greet()</code> function
         of the contract. The goal is that the box below is displaying the
@@ -131,7 +131,7 @@ console.info(\`Greeter deployed to \${greeter.address}\`);`}
       </Window>
       {isReadGreetingCompleted && (
         <>
-          <h2>Task 3 — Sending transactions</h2>
+          <h2>Task 3 — ✉️ Sending transactions</h2>
           <p>
             Open{' '}
             <code>
@@ -162,7 +162,9 @@ console.info(\`Greeter deployed to \${greeter.address}\`);`}
       )}
       {isSendGreetingTransactionCompleted && (
         <>
-          <h2>⭐️ Bonus Task — Refetch right after successful transaction</h2>
+          <h2>
+            ⭐️ Bonus Task — ♻️ Refetch right after successful transaction
+          </h2>
           <p>
             Once a transaction has been successfully submitted, ideally we see
             the updated values right away in the UI. There are multiple ways to

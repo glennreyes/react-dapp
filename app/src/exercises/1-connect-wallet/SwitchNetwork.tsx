@@ -10,12 +10,9 @@ import { Button } from '../../components/ui/Button';
 import { Icon } from '../../components/ui/Icon';
 import { classNames } from '../../utils';
 
-type SwitchNetworkButtonProps = ButtonProps;
+type SwitchNetworkProps = ButtonProps;
 
-export function SwitchNetworkButton({
-  className,
-  ...props
-}: SwitchNetworkButtonProps) {
+export function SwitchNetwork({ className, ...props }: SwitchNetworkProps) {
   const network = useNetwork();
   const { switchNetwork } = useSwitchNetwork();
   const handleSwitchNetworkClick = useCallback(

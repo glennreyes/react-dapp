@@ -60,7 +60,7 @@ contract EtherWallet {
 }`}
         </code>
       </pre>
-      <h2>Task 1 — Deposit Ether</h2>
+      <h2>Task 1 — 💰 Deposit Ether</h2>
       <p>
         Deposit some Ether to the contract by sending a transaction and passing
         the value.
@@ -73,7 +73,7 @@ contract EtherWallet {
       </Window>
       {isDepositCompleted && (
         <>
-          <h2>Task 2 — Check the balance</h2>
+          <h2>Task 2 — 🏧 Check the balance</h2>
           <p>
             Check the balance of the contract by calling the{' '}
             <code>getBalance</code> function.
@@ -88,7 +88,7 @@ contract EtherWallet {
       )}
       {isGetBalanceCompleted && (
         <>
-          <h2>Task 3 — Withdraw Ether</h2>
+          <h2>Task 3 — 💸 Withdraw Ether</h2>
           <p>
             Withdraw some Ether from the contract by sending a transaction with
             the amount you want to withdraw.
@@ -103,11 +103,29 @@ contract EtherWallet {
       )}
       {isWithdrawCompleted && (
         <>
-          <h2>⭐️ Bonus Task — Explore withdrawing from a different wallet</h2>
-          <p>
-            Sign in to MetaMask with a different wallet and try to withdraw
-            Ether to see what happens.
-          </p>
+          <h2>⭐️ Bonus Task — ✨ Explore require statements & conditions</h2>
+          <ol>
+            <li>
+              Sign in with a different wallet in MetaMask and try to withdraw
+              Ether to see what happens when invoking the error.
+            </li>
+            <li>
+              Add a condition in the <code>getBalance</code> function to only
+              allow a displaying the balance from a specific address
+            </li>
+          </ol>
+          <blockquote>
+            Check out{' '}
+            <a
+              href="https://solidity-by-example.org"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Solidy By Example
+            </a>{' '}
+            to find out more about the <code>require</code> syntax for error
+            conditions
+          </blockquote>
         </>
       )}
       <PageNavigation>

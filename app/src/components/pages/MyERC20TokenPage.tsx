@@ -36,7 +36,24 @@ export function MyERC20TokenPage() {
       <Subheading>Exercise 4</Subheading>
       <h1>Create an ERC-20 Token</h1>
       <p>In this exercise we are going to create a simple ERC-20 token.</p>
+      <pre>
+        <code>{`// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.17;
 
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+
+contract MyToken is ERC20 {
+    address payable private _owner;
+
+    constructor(string memory name, string memory symbol) ERC20(name, symbol) {
+        _owner = payable(msg.sender);
+    }
+
+    // TODO: Implement mint()
+
+    // TODO: Implement burn()
+}`}</code>
+      </pre>
       <blockquote>
         Check out the official OpenZeppelin token standard for further
         reference:{' '}
@@ -142,7 +159,7 @@ export function MyERC20TokenPage() {
       )}
       {isBurnCompleted && (
         <>
-          <h2>⭐️ Bonus Task — Transfer from another address</h2>
+          <h2>⭐️ Bonus Task — 🤖 Transfer from another address</h2>
           <p>
             In this task, we want to delegate a token transfer of a certain
             amount but from another address.

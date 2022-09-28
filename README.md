@@ -22,10 +22,10 @@ pnpm dev
 
 ## Acknowledgements
 
-Creating the workshop materials wouldn't have been possible without
+Creating the workshop materials wouldn't have been possible without:
 
-1. the help of my co-workers at [Avantgarde Finance](https://avantgarde.finance) (Gabriel, Erin, Carlos)
-2. the availble content that is available online (Nader Dabit [@dabit3](https://twitter.com/@dabit3), Pretti Khasideri, etc.)
+1. The help of my co-workers at [Avantgarde Finance](https://avantgarde.finance)
+2. The content that is available online
 
 ## References
 

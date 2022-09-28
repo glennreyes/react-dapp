@@ -6,12 +6,9 @@ import type { ButtonProps } from '../../components/ui/Button';
 import { Button } from '../../components/ui/Button';
 import { classNames } from '../../utils';
 
-type ConnectWalletButtonProps = ButtonProps;
+type ConnectWalletProps = ButtonProps;
 
-export function ConnectWalletButton({
-  className,
-  ...props
-}: ConnectWalletButtonProps) {
+export function ConnectWallet({ className, ...props }: ConnectWalletProps) {
   const { address, isConnected } = useAccount();
   const { connect } = useConnect({ connector: new MetaMaskConnector() });
   const { disconnect } = useDisconnect();
