@@ -19,3 +19,16 @@ pnpm dev
 ```
 
 3. Open [http://localhost:3000](http://localhost:3000) with your browser and follow the instructions on the screen.
+
+## Acknowledgements
+
+Creating the workshop materials wouldn't have been possible without
+
+1. the help of my co-workers at [Avantgarde Finance](https://avantgarde.finance) (Gabriel, Erin, Carlos)
+2. the availble content that is available online (Nader Dabit [@dabit3](https://twitter.com/@dabit3), Pretti Khasideri, etc.)
+
+## References
+
+- https://ethereum.org
+- https://solidity-by-example.org/
+- https://github.com/dabit3/full-stack-ethereum-workshop
