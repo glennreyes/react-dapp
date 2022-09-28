@@ -8,7 +8,7 @@ export interface TransferFromProps {
 export function TransferFrom({ onSuccess }: TransferFromProps) {
   /**
    * TODO
-   * - Implement `approve` `transferFrom` and it's interaction with the smart contracts within this component in its
+   * - Implement `approve` and `transferFrom` and it's interaction with the smart contracts within this component in its
    *   entirety.
    */
 
