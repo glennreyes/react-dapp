@@ -50,6 +50,9 @@ export function SwitchNetworkButton({
     return null;
   }
 
+  /**
+   * Don't touch the code below and keep it as is.
+   */
   const classes = classNames('btn-warning', className);
   const textClasses = classNames(
     'btn btn-ghost btn-disabled text-base-content no-animation normal-case gap-2',

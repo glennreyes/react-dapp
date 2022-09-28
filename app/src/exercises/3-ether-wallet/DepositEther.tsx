@@ -7,7 +7,6 @@ import { usePrepareSendTransaction, useSendTransaction } from 'wagmi';
 import { Alert } from '../../components/ui/Alert';
 import { Button } from '../../components/ui/Button';
 import { NumberInput } from '../../components/ui/NumberInput';
-import { classNames } from '../../utils';
 
 export interface DepositEtherProps {
   onSuccess?: (data: unknown) => void;
@@ -29,11 +28,9 @@ export function DepositEther({ onSuccess }: DepositEtherProps) {
     },
   });
 
-  const buttonClasses = classNames(
-    'btn-lg btn-primary',
-    isLoading ? 'loading' : '',
-  );
-
+  /**
+   * Don't touch the code below and keep it as is.
+   */
   const handleSubmit = useCallback(
     (event: FormEvent<HTMLFormElement>) => {
       event.preventDefault();
@@ -60,7 +57,7 @@ export function DepositEther({ onSuccess }: DepositEtherProps) {
         required
         value={value}
       />
-      <Button className={buttonClasses} disabled={isLoading} type="submit">
+      <Button disabled={isLoading} loading={isLoading} type="submit">
         {isSuccess ? 'Send new transaction' : 'Submit'}
       </Button>
       {isSuccess && <Alert>Transaction successful!</Alert>}

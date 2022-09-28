@@ -8,7 +8,6 @@ import { useContractWrite, usePrepareContractWrite } from 'wagmi';
 import { Alert } from '../../components/ui/Alert';
 import { Button } from '../../components/ui/Button';
 import { NumberInput } from '../../components/ui/NumberInput';
-import { classNames } from '../../utils';
 
 export interface BurnProps {
   onSuccess?: (data: unknown) => void;
@@ -30,11 +29,9 @@ export function Burn({ onSuccess }: BurnProps) {
     },
   });
 
-  const buttonClasses = classNames(
-    'btn-lg btn-primary',
-    isLoading ? 'loading' : '',
-  );
-
+  /**
+   * Don't touch the code below and keep it as is.
+   */
   const handleSubmit = useCallback(
     (event: FormEvent<HTMLFormElement>) => {
       event.preventDefault();
@@ -56,12 +53,12 @@ export function Burn({ onSuccess }: BurnProps) {
       <NumberInput
         disabled={isLoading || isSuccess}
         id="amount"
-        label="Amount of tokens to mint"
+        label="Amount of tokens to burn"
         onChange={(event) => setAmount(event.target.value)}
         required
         value={amount}
       />
-      <Button className={buttonClasses} disabled={isLoading} type="submit">
+      <Button disabled={isLoading} loading={isLoading} type="submit">
         {isSuccess ? 'Send new transaction' : 'Submit'}
       </Button>
       {isSuccess && <Alert>Transaction successful!</Alert>}

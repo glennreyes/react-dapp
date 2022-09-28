@@ -20,6 +20,9 @@ export function ReadGreetingData({ onSuccess }: ReadGreetingDataProps) {
     onSuccess,
   });
 
+  /**
+   * Don't touch the code below and keep it as is.
+   */
   if (isError) {
     return <h3>N/A</h3>;
   }

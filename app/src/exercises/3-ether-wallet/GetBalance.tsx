@@ -32,6 +32,9 @@ export function GetBalance({ onSuccess }: GetBalanceProps) {
 
   const value = BigNumber.isBigNumber(data) ? BigNumber.from(data) : undefined;
 
+  /**
+   * Don't touch the code below and keep it as is.
+   */
   return (
     <>
       <Stat title="Balance">

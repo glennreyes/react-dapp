@@ -17,6 +17,9 @@ export function ConnectWalletButton({
   const { connect } = useConnect({ connector: new MetaMaskConnector() });
   const { disconnect } = useDisconnect();
 
+  /**
+   * Don't touch the code below and keep it as is.
+   */
   const classes = classNames(
     isConnected ? 'btn-secondary' : 'btn-primary',
     className,

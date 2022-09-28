@@ -16,6 +16,9 @@ export function AccountBalance({
   const { address } = useAccount();
   const { data } = useBalance({ addressOrName: address, onSuccess });
 
+  /**
+   * Don't touch the code below and keep it as is.
+   */
   const textClasses = classNames(
     'btn btn-ghost btn-disabled text-base-content no-animation normal-case gap-2',
     className,
