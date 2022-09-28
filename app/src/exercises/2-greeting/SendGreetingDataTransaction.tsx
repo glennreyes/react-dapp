@@ -67,14 +67,4 @@ export function SendGreetingDataTransaction({
       {isSuccess && <Alert>Transaction successful!</Alert>}
     </form>
   );
-
-  // return (
-  //   <div className="text-center">
-  //     <h3>Nothing to display yet.</h3>
-  //     <p>
-  //       Implement me in{' '}
-  //       <code>src/exercises/2-greeting/SendGreetingDataTransaction.tsx</code>!
-  //     </p>
-  //   </div>
-  // );
 }

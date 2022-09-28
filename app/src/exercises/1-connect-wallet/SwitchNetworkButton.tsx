@@ -16,7 +16,6 @@ export function SwitchNetworkButton({
   className,
   ...props
 }: SwitchNetworkButtonProps) {
-  // TODO: Solve these missing parts
   const network = useNetwork();
   const { switchNetwork } = useSwitchNetwork();
   const handleSwitchNetworkClick = useCallback(

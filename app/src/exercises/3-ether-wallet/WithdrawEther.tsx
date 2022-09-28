@@ -29,9 +29,6 @@ export function WithdrawEther({ onSuccess }: WithdrawEtherProps) {
     },
   });
 
-  /**
-   * Don't touch the code below and keep it as is.
-   */
   const handleSubmit = useCallback(
     (event: FormEvent<HTMLFormElement>) => {
       event.preventDefault();
@@ -45,6 +42,9 @@ export function WithdrawEther({ onSuccess }: WithdrawEtherProps) {
     [isSuccess, reset, write],
   );
 
+  /**
+   * Don't touch the code below and keep it as is.
+   */
   return (
     <form
       className="flex w-full max-w-md flex-col space-y-4"

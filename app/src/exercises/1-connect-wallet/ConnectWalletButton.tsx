@@ -12,7 +12,6 @@ export function ConnectWalletButton({
   className,
   ...props
 }: ConnectWalletButtonProps) {
-  // TODO: Solve these missing parts
   const { address, isConnected } = useAccount();
   const { connect } = useConnect({ connector: new MetaMaskConnector() });
   const { disconnect } = useDisconnect();

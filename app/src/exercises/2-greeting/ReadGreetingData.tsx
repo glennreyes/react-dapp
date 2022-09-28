@@ -40,14 +40,4 @@ export function ReadGreetingData({ onSuccess }: ReadGreetingDataProps) {
       </Button>
     </>
   );
-
-  // return (
-  //   <div className="text-center">
-  //     <h3>Nothing to display yet.</h3>
-  //     <p>
-  //       Implement me in{' '}
-  //       <code>src/exercises/2-greeting/ReadGreetingData.tsx</code>!
-  //     </p>
-  //   </div>
-  // );
 }

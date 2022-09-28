@@ -39,6 +39,9 @@ export function BalanceOf({ onSuccess }: BalanceOfProps) {
   const symbol =
     typeof symbolResult.data === 'string' ? symbolResult.data : undefined;
 
+  /**
+   * Don't touch the code below and keep it as is.
+   */
   return (
     <div className="flex w-full max-w-md flex-col space-y-4">
       <AddressInput
