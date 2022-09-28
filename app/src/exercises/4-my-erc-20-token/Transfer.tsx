@@ -22,6 +22,7 @@ export function Transfer({ onSuccess }: TransferProps) {
     addressOrName: deployment.myToken.address,
     args: [to, amount ? utils.parseUnits(amount, 18) : constants.Zero],
     contractInterface: myToken.abi,
+    enabled: utils.isAddress(to),
     functionName: 'transfer',
   });
   const { isLoading, isSuccess, reset, write } = useContractWrite({

@@ -19,7 +19,7 @@ export function TransferFrom({ onSuccess }: TransferFromProps) {
       className="flex w-full max-w-md flex-col items-center space-y-4"
       onSubmit={handleSubmit}
     >
-      TODO
+      Your turn to get this fully implemented.
     </form>
   );
 }

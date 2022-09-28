@@ -1,6 +1,6 @@
 import myToken from '@react-dapp/protocol/artifacts/contracts/MyToken.sol/MyToken.json';
 import deployment from '@react-dapp/protocol/deployment.json';
-import { BigNumber } from 'ethers';
+import { constants, utils } from 'ethers';
 import type { FormEvent } from 'react';
 import { useCallback, useState } from 'react';
 import { useContractWrite, usePrepareContractWrite } from 'wagmi';
@@ -18,7 +18,7 @@ export function Burn({ onSuccess }: BurnProps) {
   const [amount, setAmount] = useState('');
   const { config } = usePrepareContractWrite({
     addressOrName: deployment.myToken.address,
-    args: [amount ? BigNumber.from(amount) : undefined],
+    args: [amount ? utils.parseUnits(amount, 18) : constants.Zero],
     contractInterface: myToken.abi,
     functionName: 'burn',
   });

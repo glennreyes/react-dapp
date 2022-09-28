@@ -10,6 +10,11 @@ contract MyToken is ERC20 {
         _owner = payable(msg.sender);
     }
 
+    function burn(uint amount) external {
+        require(msg.sender == _owner, "Only the owner can burn new tokens");
+        _burn(msg.sender, amount);
+    }
+
     function mint(uint amount) external {
         require(msg.sender == _owner, "Only the owner can mint new tokens");
         _mint(msg.sender, amount);

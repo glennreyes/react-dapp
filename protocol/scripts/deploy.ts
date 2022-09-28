@@ -16,7 +16,7 @@ async function main() {
   const EtherWallet = await ethers.getContractFactory('EtherWallet');
   const etherWallet = await EtherWallet.deploy();
   await etherWallet.deployed();
-  console.info(`EtherWallet deployed to ${etherWallet}`);
+  console.info(`EtherWallet deployed to ${etherWallet.address}`);
 
   /**
    * MY ERC20 TOKEN
